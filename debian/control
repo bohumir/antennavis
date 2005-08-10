@@ -1,0 +1,14 @@
+Source: antennavis
+Section: hamradio
+Priority: optional
+Maintainer: Joop Stakenborg <pa3aba@debian.org>
+Build-Depends: debhelper (>= 4.0.0), tcl8.4-dev, tk8.4-dev, xlibmesa-gl-dev, xlibmesa-glu-dev, libxmu-dev
+Standards-Version: 3.6.1
+
+Package: antennavis
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: nec
+Description: antenna visualization software
+ Antennavis is a visualization toolkit designed to aid the user in better
+ understanding the data output by the NEC2 antenna modelling software.

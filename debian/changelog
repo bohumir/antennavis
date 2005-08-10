@@ -1,0 +1,55 @@
+antennavis (0.2-5) unstable; urgency=low
+
+  * Somehow the old makefile got distributed. Fixed that.
+  * libxmu build dependency added in the previous version. Closes: #303759.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Sat,  9 Apr 2005 14:34:33 +0200
+
+antennavis (0.2-4) unstable; urgency=low
+
+  * Add libxmu-dev to the build dependencies.
+  * Copyright notices added to all of the C files, header files and Makefile.
+  * License file added to the Models directory.
+  * Provide a README with kenneth's current e-mail address and explanation
+    of this effort.
+  * Removed tkInt.h, it is not needed.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Sat,  9 Apr 2005 14:10:04 +0200
+
+antennavis (0.2-3) unstable; urgency=low
+
+  * Do not remove not-working models, simply install the working ones.
+  * Remove unused functions associated with isosurfaces: ComputeVolumeData,
+    GenerateNECVolumeFile in ant.c, WriteVolumeCardFile and ParseVolumeData
+    in pccard.c.
+  * Upload to unstable. Closes: #301320.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Fri,  8 Apr 2005 19:11:23 +0200
+
+antennavis (0.2-2) unstable; urgency=low
+
+  * Another attempt to create a useable package, build against togl-1.6 and
+    tcl/tk 8.4.
+  * Compile with -Wall and fix all but one compilation warnings.
+  * Call nec2 with the complete path.
+  * Remove debian menu entry, since we should call antenna.tcl from the command
+    line.
+  * Set height of the top frame to 350, so it fits on a 1024x768 display.
+  * Rename input_nec to input.nec and output_nec to output.nec.
+  * Add some directions in README.debian.
+  * Remove help button and window, it is of no use.
+  * Remove "Load Yagi" optionmenu, it is of no use.
+  * Fixed a crash when output.nec not present.
+  * Only provide working examples.
+  * The isosurfaces button has been removed, because it does nothing.
+  * The buttons have been moved to the display frame, which leaves a bit more
+    rome on the screen.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Wed,  9 Mar 2005 21:29:30 +0100
+
+antennavis (0.2-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Thu,  3 Mar 2005 19:43:19 +0100
+

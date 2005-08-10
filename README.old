@@ -1,0 +1,74 @@
+Antennavis 0.2
+
+These are the release notes for Antennavis version 0.2.  Read them carefully,
+as they tell you what this is all about, explain how to install the
+software, and what to do if something goes wrong.  The WWW home page
+for Antennavis is (http://n5xu.ae.utexas.edu/antennavis/).
+
+WHAT IS ANTENNAVIS?
+
+  Antennavis is a visualization toolkit designed to aid the user in better
+  understanding the data output by the NEC2 antenna modelling software.
+  The Numerical Electromagnetic Code is publicly available software.
+  Antennavis is released under the terms and conditions of the GNU General
+  Public License (GPL; see COPYING for more details.)
+
+
+ON WHAT HARDWARE DOES IT RUN?
+
+  Version 0.2 presently is known to run only on the IRIX 6.5 operating 
+  system.  In principle, the software should be easily made to run on 
+  any UNIX system on which NEC2, OpenGL/Mesa, Togl, and Tcl/Tk can be made 
+  to run.  It might also be possible to make the software work on Microsoft 
+  Windows or Apple Macintosh systems that support the OpenGL, Togl, and 
+  the Tcl/Tk lanaguages.
+
+
+DOCUMENTATION:
+
+ - There is presently very little good documentation on the source code.
+
+
+SOFTWARE REQUIREMENTS
+
+ - This application requires an operating system with a windowed 
+   GUI environment.  It is known to work well with the X Window System.
+
+ - This application requires a separate executable of the NEC2 code.
+   A version of NEC2, compiled for IRIX 6.5 is included in the distribution.
+   You can get the NEC2 source code in Fortran on the web at:
+   (ftp://ftp.qsl.net/pub/wb6tpu/NEC/nec2_src.tar.Z)
+
+ - This application uses OpenGL, and the Togl library.  A version of the Togl
+   library known to work with AntennaVis is included in the distribution.
+   The latest version of Togl can be found online at:
+   (http://Togl.sourceforge.net/)
+
+  - This application requires Tcl/Tk.  Versions 8.0 should be acceptable.
+
+
+INSTALLING:
+
+ - If you are not using the supplied NEC2 executable, you will need to 
+   compile your own copy.  Directions for such are presently beyond the 
+   scope of this document.
+
+ - To compile the application, type 'make' at the command line prompt.
+
+ - An executable file called 'TkAnt' should be created.
+
+EXECUTING:
+
+ - To launch the program, type 'antenna.tcl' at the command line prompt.
+
+
+IF SOMETHING GOES WRONG:
+
+ - This code is very alpha, and there are no guarantees that it will 
+   ever work in a given environment.  Please give your best effort to 
+   make the program run.  Contact the program maintainer (see MAINTAINER 
+   for details) only if necessary.
+
+ - In all bug-reports, *please* describe exactly what the environment you 
+   are using is, how to duplicate the problem, and what include the input
+   files that cause the problem.  The more detailed information the better.
