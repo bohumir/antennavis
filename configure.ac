@@ -4,11 +4,9 @@
 AC_PREREQ(2.57)
 AC_INIT(antennavis, 0.3, pg4i@amsat.org)
 AC_CONFIG_SRCDIR([AntennaWidget.c])
-AC_CONFIG_HEADER([config.h])
 
 # Checks for programs.
 AC_PROG_CC
-AC_PROG_INSTALL
 
 LDFLAGS="$LDFLAGS -L/usr/X11R6/lib"
 # Checks for libraries.
