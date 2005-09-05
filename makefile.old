@@ -62,7 +62,7 @@ default: TkAnt
 # TkAnt
 TkAnt: TkAntenna.o AntennaWidget.o ParseArgs.o ant.o pcard.o \
 	VisField.o VisWires.o togl.o $(HEADERS)
-	$(CC) $(LFLAGS) $(OBJS) $(LIBS) -o $@
+	$(CC) $(LFLAGS) -o $@ $(OBJS) $(LIBS) 
 
 .c.o:
 	$(CC) $(CFLAGS) $*.c

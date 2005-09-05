@@ -1,0 +1,87 @@
+## Please do not edit "makefile", as it is auto-generated
+## by ./configure from makefile.in  Edit makefile.in instead.
+##
+CFLAGS := @CFLAGS@
+LIBS := @LIBS@
+LDFLAGS := @LDFLAGS@
+
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+
+bindir = @bindir@
+datadir = @datadir@
+
+DESTDIR = $(datadir)/antennavis/
+
+CFLAGS += -c -Wall -DDEFAULT_PATH=\"$(DESTDIR)\"
+
+#
+# Standard configuration method.
+#
+define CONFIGURE
+	if [ -x ./config.status ] ; then \
+	    ./config.status --recheck && ./config.status; \
+	else \
+		./configure; \
+	fi
+endef
+
+subdir = 
+files =
+
+clean-files = TkAnt *.o
+distclean-files = config.log config.status
+
+srcfiles = configure configure.in makefile makefile.in
+
+default: TkAnt
+
+HEADERS = TkAntenna.h ParseArgs.h ant.h pcard.h VisField.h togl.h
+OBJS    = TkAntenna.o AntennaWidget.o ParseArgs.o togl.o ant.o pcard.o \
+	VisField.o VisWires.o
+
+TkAnt: TkAntenna.o AntennaWidget.o ParseArgs.o ant.o pcard.o \
+	VisField.o VisWires.o togl.o $(HEADERS)
+	$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o $@
+
+##
+## .c files
+##
+.c.o:
+	$(CC) $(CFLAGS) $*.c
+
+##
+## make sure the build system is consistant.
+##
+makefile: configure makefile.in
+	$(CONFIGURE)
+	
+configure:
+	aclocal
+	autoheader
+	autoconf
+
+dirs:
+	-mkdir $(DESTDIR)
+
+base: dirs
+	for i in $(files) ; do \
+	    cp $$i $(DESTDIR)$$i; \
+	done
+	
+installbase: base
+	$(INSTALL)
+
+install: installbase antennavis
+	cp antennavis $(bindir)/antennavis
+
+uninstall:
+	-rm -f $(bindir)/antennavis
+	-rm -rf $(DESTDIR)
+
+clean:
+	-rm -f $(clean-files)
+
+distclean: clean
+	-rm -f $(distclean-files)
