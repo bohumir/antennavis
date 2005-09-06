@@ -27,6 +27,7 @@
 ## by ./configure from makefile.in  Edit makefile.in instead.
 ##
 CFLAGS := @CFLAGS@
+CPPFLAGS := @CPPFLAGS@
 LIBS := @LIBS@
 LDFLAGS := @LDFLAGS@
 
@@ -35,7 +36,7 @@ exec_prefix = @exec_prefix@
 bindir = @bindir@
 datadir = @datadir@
 
-CFLAGS += -c -Wall
+CFLAGS += -c -Wall $(CPPFLAGS)
 
 #
 # Standard configuration method.

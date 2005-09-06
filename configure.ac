@@ -23,7 +23,7 @@ AC_ARG_WITH(tcltk,
 [  --with-tcltk=DIR        Use DIR/include and DIR/lib for tcl and tk])
 
 if test -n "$tcltk" -a "$tcltk" != "no" ; then
-	CPPFLAGS="-I$tcltk/include $CFLAGS"
+	CPPFLAGS="-I$tcltk/include $CPPFLAGS"
 	LDFLAGS"$LDFLAGS -L$tcltk/lib"
 fi
 
@@ -33,7 +33,7 @@ AC_ARG_WITH(tkdir,
                           and is not auto-detected properly])
 
 if test -n "$tkdir" -a "$tkdir" != "no" ; then
-	CPPFLAGS="-I$tkdir/include $CFLAGS"
+	CPPFLAGS="-I$tkdir/include $CPPFLAGS"
 	LDFLAGS"$LDFLAGS -L$tkdir/lib"
 fi
 
