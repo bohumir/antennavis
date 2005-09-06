@@ -32,14 +32,10 @@ LDFLAGS := @LDFLAGS@
 
 prefix = @prefix@
 exec_prefix = @exec_prefix@
-
-
 bindir = @bindir@
 datadir = @datadir@
 
-DESTDIR = $(datadir)/antennavis/
-
-CFLAGS += -c -Wall -DDEFAULT_PATH=\"$(DESTDIR)\"
+CFLAGS += -c -Wall
 
 #
 # Standard configuration method.
@@ -56,7 +52,7 @@ subdir =
 files =
 
 clean-files = TkAnt *.o
-distclean-files = config.log config.status
+distclean-files = config.log config.status input.nec output.nec *~
 
 srcfiles = configure configure.in makefile makefile.in
 
@@ -84,26 +80,15 @@ makefile: configure makefile.in
 	
 configure:
 	aclocal
-	autoheader
 	autoconf
 
-dirs:
-	-mkdir $(DESTDIR)
-
-base: dirs
-	for i in $(files) ; do \
-	    cp $$i $(DESTDIR)$$i; \
-	done
-	
-installbase: base
-	$(INSTALL)
-
-install: installbase antennavis
-	cp antennavis $(bindir)/antennavis
+install: TkAnt
+	install -s TkAnt $(bindir)
+	install antenna.tcl $(bindir)
 
 uninstall:
-	-rm -f $(bindir)/antennavis
-	-rm -rf $(DESTDIR)
+	-rm -f $(bindir)/TkAnt
+	-rm -f $(bindir)/antenna.tcl
 
 clean:
 	-rm -f $(clean-files)

@@ -3,7 +3,7 @@ Section: hamradio
 Priority: optional
 Maintainer: Joop Stakenborg <pa3aba@debian.org>
 Build-Depends: debhelper (>= 4.0.0), tcl8.4-dev, tk8.4-dev, xlibmesa-gl-dev, xlibmesa-glu-dev, libxmu-dev
-Standards-Version: 3.6.1
+Standards-Version: 3.6.2
 
 Package: antennavis
 Architecture: any

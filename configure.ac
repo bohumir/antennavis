@@ -23,7 +23,7 @@ AC_ARG_WITH(tcltk,
 [  --with-tcltk=DIR        Use DIR/include and DIR/lib for tcl and tk])
 
 if test -n "$tcltk" -a "$tcltk" != "no" ; then
-	CFLAGS="-I$tcltk/include $CFLAGS"
+	CPPFLAGS="-I$tcltk/include $CFLAGS"
 	LDFLAGS"$LDFLAGS -L$tcltk/lib"
 fi
 
@@ -33,7 +33,7 @@ AC_ARG_WITH(tkdir,
                           and is not auto-detected properly])
 
 if test -n "$tkdir" -a "$tkdir" != "no" ; then
-	CFLAGS="-I$tkdir/include $CFLAGS"
+	CPPFLAGS="-I$tkdir/include $CFLAGS"
 	LDFLAGS"$LDFLAGS -L$tkdir/lib"
 fi
 
@@ -46,7 +46,7 @@ AC_DEFUN(AC_SEARCH_HEADERS,
 		    [$2=`AS_DIRNAME($search_header)`]
 			
 			[if test "$$2" != "/usr/include"; then
-			   CFLAGS="-I$$2 $CFLAGS"
+			   CPPFLAGS="-I$$2 $CPPFLAGS"
 			fi
 			break]
 			,
@@ -59,10 +59,9 @@ if test "x$with_tcltk" != "xno" ; then
 	AC_SEARCH_LIBS([Tk_Init], [tk84 tk8.4 tk83 tk8.3],
 	    [AC_SEARCH_HEADERS(/usr/include/tcl8.4/tcl.h /usr/include/tcl8.3/tcl.h
 		    ,BASE_TCL_DIR)
-		
-		AC_SEARCH_HEADERS(/usr/include/tcl8.4/tk.h /usr/include/tcl8.3/tk.h
-		    ,BASE_TK_DIR)
-		]))
+
+		AC_SEARCH_HEADERS("$BASE_TCL_DIR/tk.h" /usr/include/tk8.4/tk.h /usr/include/tk8.3/tk.h
+		    ,BASE_TK_DIR)]))
 fi
 
 # Checks for typedefs, structures, and compiler characteristics.

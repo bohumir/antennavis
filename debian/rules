@@ -10,9 +10,10 @@
 #export DH_VERBOSE=1
 
 
-
-
-CFLAGS = -Wall -g
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 	CFLAGS += -O0
@@ -20,34 +21,25 @@ else
 	CFLAGS += -O2
 endif
 
-configure: configure-stamp
-configure-stamp:
+config.status: configure
 	dh_testdir
 	# Add here commands to configure the package.
-
-	touch configure-stamp
-
+	CFLAGS="$(CFLAGS)" ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info
 
 build: build-stamp
 
-build-stamp: configure-stamp 
+build-stamp: config.status
 	dh_testdir
-
 	# Add here commands to compile the package.
 	$(MAKE)
-	#docbook-to-man debian/antennavis.sgml > antennavis.1
-
 	touch build-stamp
 
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp configure-stamp
-	rm -f input.nec output.nec
-
+	rm -f build-stamp
 	# Add here commands to clean up after the build process.
-	-$(MAKE) clean
-
+	-$(MAKE) distclean
 	dh_clean 
 
 install: build
@@ -55,9 +47,8 @@ install: build
 	dh_testroot
 	dh_clean -k 
 	dh_installdirs
-
 	# Add here commands to install the package into debian/antennavis.
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/antennavis
+	$(MAKE) install prefix=$(CURDIR)/debian/antennavis/usr
 
 
 # Build architecture-independent files here.
@@ -72,24 +63,11 @@ binary-arch: build install
 	dh_installdocs
 	dh_installexamples Models/adrian.nec Models/ant.nec Models/spaceship.nec \
 	Models/yagi.nec Models/yg_4el_20.nec Models/yg_6el.nec
-#	dh_install
 	dh_installmenu
-#	dh_installdebconf	
-#	dh_installlogrotate
-#	dh_installemacsen
-#	dh_installpam
-#	dh_installmime
-#	dh_installinit
-#	dh_installcron
-#	dh_installinfo
-#	dh_installman
 	dh_link
 	dh_strip
 	dh_compress
 	dh_fixperms
-#	dh_perl
-#	dh_python
-#	dh_makeshlibs
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol
