@@ -1,588 +1,569 @@
-<HTML>
+<html><head>
+<link rev="made" href="http://togl.sourceforge.net/brianp@elastic.avid.com"><title>Togl</title></head>
 
-<HEAD>
-<LINK REV="made" HREF="brianp@ssec.wisc.edu">
-<TITLE>Togl</TITLE>
-</HEAD>
+<body>
 
-<BODY>
-
-<CENTER>
-<H1>Togl - a Tk OpenGL widget</H1>
-<H3>Version 1.4</H3>
-<H3>Copyright (C) 1996-1997 Brian Paul and Ben Bederson</H3>
-</CENTER>
+<center>
+<h1>Togl - a Tk OpenGL widget</h1>
+<h3>Copyright (C) 1996-2000 Brian Paul and Ben Bederson</h3>
+</center>
 
 
-<BR>
-<BR>
-<H2>Contents</H2>
+<br>
+<br>
+<h2>Contents</h2>
 
-<UL>
-<LI><A HREF="#Intro">Introduction</A>
-<LI><A HREF="#Prereq">Prerequisites</A>
-<LI><A HREF="#Getting">Getting Togl</A>
-<LI><A HREF="#Mailing">Mailing List</A>
-<LI><A HREF="#Using">Using Togl with your Application</A>
-<LI><A HREF="#Cfuncs">C Togl Functions</A>
-<LI><A HREF="#TclFuncs">Tcl Togl Functions</A>
-<LI><A HREF="#Demo">Demo Programs</A>
-<LI><A HREF="#Problems">Common Questions and Problems</A>
-<LI><A HREF="#Bugs">Reporting Bugs</A>
-<LI><A HREF="#Version">Version History</A>
-<LI><A HREF="#Contrib">Contributors</A>
-</UL>
+<ul>
+<li><a href="#Intro">Introduction</a>
+</li><li><a href="#Prereq">Prerequisites</a>
+</li><li><a href="#Getting">Getting Togl</a>
+</li><li><a href="#Mailing">Mailing List</a>
+</li><li><a href="#Using">Using Togl with your Application</a>
+</li><li><a href="#Cfuncs">C Togl Functions</a>
+</li><li><a href="#TclFuncs">Tcl Togl Functions</a>
+</li><li><a href="#Demo">Demo Programs</a>
+</li><li><a href="#Stereo">Stereo Rendering</a>
+</li><li><a href="#Problems">Common Questions and Problems</a>
+</li><li><a href="#Bugs">Reporting Bugs</a>
+</li><li><a href="#Version">Version History</a>
+</li><li><a href="#Contrib">Contributors</a>
+</li></ul>
 
 
 
-<BR>
-<BR>
-<A NAME="Intro">
-<H2>Introduction</H2>
+<br>
+<br>
+<a name="Intro">
+</a><h2><a name="Intro">Introduction</a></h2>
 
-Togl is a Tk widget for OpenGL rendering.
+<a name="Intro">Togl is a Tk widget for OpenGL rendering.
 Togl was originally based on OGLTK, written by Benjamin Bederson at
 the University of New Mexico.
 Togl adds the new features:
 
-<UL>
-<LI>color-index mode support including color allocation functions
-<LI>support for requesting stencil, accumulation, alpha buffers, etc
-<LI>multiple OpenGL drawing widgets
-<LI>OpenGL extension testing from Tcl
-<LI>simple, portable font support
-<LI>overlay plane support
-</UL>
+</a><ul>
+<li><a name="Intro">color-index mode support including color allocation functions
+</a></li><li><a name="Intro">support for requesting stencil, accumulation, alpha buffers, etc
+</a></li><li><a name="Intro">multiple OpenGL drawing widgets
+</a></li><li><a name="Intro">OpenGL extension testing from Tcl
+</a></li><li><a name="Intro">simple, portable font support
+</a></li><li><a name="Intro">overlay plane support
+</a></li></ul>
 
 
-<P>
-Togl allows one to create and manage a special Tk/OpenGL widget with Tcl and
+<p>
+<a name="Intro">Togl allows one to create and manage a special Tk/OpenGL widget with Tcl and
 render into it with a C program.  That is, a typical Togl program will have Tcl
 code for managing the user interface and a C program for computations and
 OpenGL rendering.
-</P>
+</a></p>
 
-<P>
-Togl is copyrighted by
-<A HREF="http://www.ssec.wisc.edu/~brianp/homepage1.html">Brian Paul</A>
-<A HREF="mailto:brianp@elastic.avid.com">(brianp@elastic.avid.com)</A> and
-<A HREF="http://www.cs.unm.edu/~bederson/">Benjamin Bederson</A>
-<A HREF="mailto:bederson@cs.unm.edu">(bederson@cs.unm.edu)</A>.
+<p>
+<a name="Intro">Togl is copyrighted by
+</a><a href="http://www.mesa3d.org/brianp/home.html">Brian Paul</a>
+<a href="mailto:brian_paul@mesa3d.org">(brian_paul@mesa3d.org)</a> and
+<a href="http://www.cs.umd.edu/%7Ebederson/">Benjamin Bederson</a>
+<a href="mailto:bederson@cs.umd.edu">(bederson@cs.umd.edu)</a>.
 See the LICENSE file for details.
-</P>
+</p>
 
-The Togl WWW page is available from:
-<UL>
-<LI>Wisconsin at  <A HREF="http://www.ssec.wisc.edu/~brianp/Togl.html">
-http://www.ssec.wisc.edu/~brianp/Togl.html</A>
-<LI>New Mexico at  <A HREF="http://www.cs.unm.edu/~bederson/Togl.html">
-http://www.cs.unm.edu/~bederson/Togl.html</A>
-</UL>
+<p>
+The <a href="http://www.sourceforge.net/project/?form_grp=519">
+Togl project</a> and
+<a href="http://togl.sourceforge.net/">home page</a> are
+hosted by <a href="http://www.sourceforge.net/">SourceForge</a>.
+</p>
 
 
-<BR>
-<A NAME="Prereq">
-<H2>Prerequisites</H2>
 
-<P>
-You should have
-<A HREF="http://www.sunlabs.com:80/research/tcl/">Tcl and Tk</A>
+<br>
+<a name="Prereq">
+</a><h2><a name="Prereq">Prerequisites</a></h2>
+
+<p>
+<a name="Prereq">You should have
+</a><a href="http://www.sunlabs.com/research/tcl/">Tcl and Tk</a>
 installed on your computer, including the Tk source code files.
-Togl has been tested with Tcl 7.4/Tk 4.0, Tcl 7.5/Tk 4.1, Tcl 7.6/Tk 4.2
-and Tcl/Tk 8.0 at this time.
-</P>
+Togl has been tested with Tcl 7.4/Tk 4.0, Tcl 7.5/Tk 4.1, Tcl 7.6/Tk 4.2,
+Tcl/Tk 8.0 and Tcl/Tk 8.1 at this time.
+</p>
 
-<P>
+<p>
 You must also have
-<A HREF="http://www.sgi.com/Technology/openGL/">OpenGL</A> or
-<A HREF="http://www.ssec.wisc.edu/~brianp/Mesa.html">Mesa</A>
+<a href="http://www.opengl.org/">OpenGL</a> or
+<a href="http://www.mesa3d.org/">Mesa</a>
 (a free alternative to OpenGL) installed on your computer.
-</P>
+</p>
 
-<P>
+<p>
 One should be familiar with Tcl, Tk, OpenGL, and C programming to use Togl
 effectively.
-<P>
+</p><p>
 
 
-<BR>
-<A NAME="Getting">
-<H2>Getting Togl</H2>
 
-<P>
-The current version of Togl is 1.4.  You may download it from either:
-</P>
+<br>
+<a name="Getting">
+</a></p><h2><a name="Getting">Getting Togl</a></h2>
 
-<UL>
-<LI>Wisconsin at
-<A HREF="ftp://iris.ssec.wisc.edu/pub/misc/Togl-1.4.tar.gz">
-ftp://iris.ssec.wisc.edu/pub/misc/Togl-1.4.tar.gz</A>
-<LI>New Mexico at
-<A HREF="ftp://ftp.cs.unm.edu/pub/bederson/Togl-1.4.tar.gz">
-ftp://ftp.cs.unm.edu/pub/bederson/Togl-1.4.tar.gz</A>
-</UL>
-
-Togl may also be obtained manually with ftp:
-<UL>
-<LI>Host:  iris.ssec.wisc.edu
-<LI>Login:  anonymous
-<LI>Password:  your email address
-<LI>Directory:  pub/misc
-<LI>File:  Togl-1.4.tar.gz
-</UL>
-
-<P>
-The Makefile included with Togl is configured for SGI systems.  It shouldn't
-be hard to adapt it for others.
-In practice, you'll just add togl.c to your application's Makefile.
-</P>
+<p>
+<a name="Getting">The current version of Togl is 1.5.
+Version 1.6 is under development and may be downloaded from CVS.
+You may download the current, past and future/beta versions from
+the ftp site at
+</a><a href="ftp://togl.sourceforge.net/pub/Togl/">
+ftp://Togl.sourceforge.net/pub/Togl/
+</a>.
+</p>
 
 
-<BR>
-<A NAME="Mailing">
-<H2>Mailing list</H2>
 
-<P>
-There is no mailing list for Togl at this time but several people have
-asked about it.
+<br>
+<a name="Mailing">
+</a><h2><a name="Mailing">Mailing list</a></h2>
 
-If you have the means and time to setup and administer such a mailing
-list please contact Brian.
-</P>
+<p>
+<a name="Mailing">See the </a><a href="http://www.sourceforge.net/project/?form_grp=519">
+Togl project at SourceForge</a> for mailing list information.
+</p>
 
 
-<BR>
-<A NAME="Using">
-<H2>Using Togl With Your Application</H2>
 
-<P>
-The Togl source code is intended to be included with your application.
+<br>
+<a name="Using">
+</a><h2><a name="Using">Using Togl With Your Application</a></h2>
+
+<p>
+<a name="Using">The Togl source code is intended to be included with your application.
 You may elect to compile the Togl code into a library file but that's not
 necessary.
-</P>
+</a></p>
 
-<P>
-Unix/X systems only need the <CODE>togl.c</CODE>, <CODE>togl.h</CODE>
-and one of of the <CODE>tkInt*.h</CODE> files.
-</P>
+<h3><a name="Using">Unix/X11 usage</a></h3>
 
-<P>
-Windows 95/NT systems also need the other <CODE>tk*.h</CODE>,
-<CODE>WinMain.c</CODE>, <CODE>winMain.c</CODE>, and <CODE>tkConsole.c</CODE>
+<p>
+<a name="Using">Unix/X systems only need the <code>togl.c</code>, <code>togl.h</code>
+and one of of the <code>tkInt*.h</code> files.
+</a></p>
+
+
+<h3><a name="Using">Windows 95/NT usage</a></h3>
+
+<p>
+<a name="Using">Windows 95/NT systems also need the other <code>tk*.h</code>,
+<code>WinMain.c</code>, <code>winMain.c</code>, and <code>tkConsole.c</code>
 files distributed with Togl.
-</P>
+</a></p>
 
+<p>
+<a name="Using">Also, you'll have to copy the <code>tkInt.8.0.h</code> file to
+<code>tkInt.h</code>.
+</a></p>
 
-<P>
-Togl defines an API of C-callable functions and an API of Tcl-callable
+<p>
+<a name="Using">Togl defines an API of C-callable functions and an API of Tcl-callable
 functions.  The functions are documented here.  See the demo programs
 for examples of how they are used.
-</P>
+</a></p>
 
-<BR>
-<A NAME="Cfuncs">
-<H2>C Togl Functions</H2>
+<a name="Using"><br>
+</a><a name="Cfuncs">
+</a><h2><a name="Cfuncs">C Togl Functions</a></h2>
 
-<P>
-These are the Togl commands one may call from a C program.
-</P>
+<p>
+<a name="Cfuncs">These are the Togl commands one may call from a C program.
+</a></p>
 
-<CODE>
-#include "togl.h"
-</CODE>
-<P>
+<code>
+<a name="Cfuncs">#include "togl.h"
+</a></code>
+<p>
 
-You should include the togl.h header before any others so that various
+<a name="Cfuncs">You should include the togl.h header before any others so that various
 WindowsNT/95 stuff falls into place.
-<P>
+</a></p><p>
 
 
 
-<H3>Setup and Initialization Functions</H3>
+</p><h3><a name="Cfuncs">Setup and Initialization Functions</a></h3>
 
-<DL>
-<DT><CODE>int Togl_Init( Tcl_Interp *interp )</CODE>
-<DD>
-	Initializes the Togl module.  This is typically called from the
+<dl>
+<dt><code><a name="Cfuncs">int Togl_Init( Tcl_Interp *interp )</a></code>
+</dt><dd>
+<a name="Cfuncs">	Initializes the Togl module.  This is typically called from the
 	Tk_Main() callback function.
-</DL>
+</a></dd></dl>
 
 
-<DL>
-<DT><CODE>void Togl_CreateFunc( Togl_Callback *proc )
-<BR>
+<dl>
+<dt><code><a name="Cfuncs">void Togl_CreateFunc( Togl_Callback *proc )
+<br>
 void Togl_DisplayFunc( Togl_Callback *proc )
-<BR>
+<br>
 void Togl_ReshapeFunc( Togl_Callback *proc )
-<BR>
+<br>
 void Togl_DestroyFunc( Togl_Callback *proc )
-</CODE>
-<DD>
-	Register C functions to be called by Tcl/Tk when a widget is realized,
+</a></code>
+</dt><dd>
+<a name="Cfuncs">	Register C functions to be called by Tcl/Tk when a widget is realized,
 	must be redrawn, is resized, or is destroyed respectively.
-	<P>
-	Each C callback must be of the form:
-<PRE>
-	void callback( struct Togl *togl )
+	</a><p>
+<a name="Cfuncs">	Each C callback must be of the form:
+</a></p><pre><a name="Cfuncs">	void callback( struct Togl *togl )
 	{
 	   ...your code...
 	}
-</PRE>
-</DL>
+</a></pre>
+</dd></dl>
 
 
-<DL>
-<DT><CODE>void Togl_TimerFunc( Togl_Callback *proc )</CODE>
-<DD>
-	Register a C timer callback function which will be called every
-	<EM>n</EM> milliseconds.  The interval <EM>n</EM> is specified
-	by the <CODE>-time</CODE> option to the Togl Tcl command.
-	<P>
-	The C callback must be of the form:
-<PRE>
-	void my_timer_callback( struct Togl *togl )
+<dl>
+<dt><code><a name="Cfuncs">void Togl_TimerFunc( Togl_Callback *proc )</a></code>
+</dt><dd>
+<a name="Cfuncs">	Register a C timer callback function which will be called every
+	<em>n</em> milliseconds.  The interval <em>n</em> is specified
+	by the <code>-time</code> option to the Togl Tcl command.
+	</a><p>
+<a name="Cfuncs">	The C callback must be of the form:
+</a></p><pre><a name="Cfuncs">	void my_timer_callback( struct Togl *togl )
 	{
 	   ...your code...
 	}
-</PRE>
-</DL>
+</a></pre>
+</dd></dl>
 
-<DL>
-<DT><CODE>void Togl_ResetDefaultCallbacks( void )</CODE>
-<DD>
-	Reset all default callback pointers to NULL.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">void Togl_ResetDefaultCallbacks( void )</a></code>
+</dt><dd>
+<a name="Cfuncs">	Reset all default callback pointers to NULL.
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_CreateCommand( char *cmd_name, Togl_CmdProc *cmd_proc )</CODE>
-<DD>
-	Used to create a new Togl sub-command.  The C function which implements
+<dl>
+<dt><code><a name="Cfuncs">void Togl_CreateCommand( char *cmd_name, Togl_CmdProc *cmd_proc )</a></code>
+</dt><dd>
+<a name="Cfuncs">	Used to create a new Togl sub-command.  The C function which implements
 	the command must be of the form:
 
-	<PRE>
-	int callback( struct Togl *togl, int argc, char *argv[] )
+	</a><pre><a name="Cfuncs">	int callback( struct Togl *togl, int argc, char *argv[] )
 	{
 	   ...your code...
 	   return TCL_OK or TCL_ERROR;
 	}
-	</PRE>
-</DL>
+	</a></pre>
+</dd></dl>
 
-<H3>Drawing-related Commands</H3>
+<h3><a name="Cfuncs">Drawing-related Commands</a></h3>
 
-<DL>
-<DT><CODE>void Togl_PostRedisplay( struct Togl *togl )</CODE>
-<DD>
-	Signals that the widget should be redrawn.  When Tk is next idle the
+<dl>
+<dt><code><a name="Cfuncs">void Togl_PostRedisplay( struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">	Signals that the widget should be redrawn.  When Tk is next idle the
 	user's C render callback will be invoked.  This is typically called
 	from within a Togl sub-command which was registered with
 	Togl_CreateCommand().
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_SwapBuffers( struct Togl *togl )</CODE>
-<DD>
-    Swaps the front and back color buffers for a double-buffered widget.
+<dl>
+<dt><code><a name="Cfuncs">void Togl_SwapBuffers( struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Swaps the front and back color buffers for a double-buffered widget.
     glFlush() is executed if the window is single-buffered.  This is
     typically called in the rendering function which was registered with
     Togl_DisplayFunc().
-</DL>
+</a></dd></dl>
 
-<H3>Query Functions</H3>
+<h3><a name="Cfuncs">Query Functions</a></h3>
 
-<DL>
-<DT><CODE>char *Togl_Ident( struct Togl *togl )</CODE>
-<DD>
-    Returns a pointer to the identification string associated with a Togl
+<dl>
+<dt><code><a name="Cfuncs">char *Togl_Ident( struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns a pointer to the identification string associated with a Togl
     widget or NULL if there's no identifier string.
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>int Togl_Width( struct Togl *togl )</CODE>
-<DD>
-    Returns the width of the given Togl widget.  Typically called in the
+<dl>
+<dt><code><a name="Cfuncs">int Togl_Width( struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns the width of the given Togl widget.  Typically called in the
     function registered with Togl_ReshapeFunc().
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>int Togl_Height( struct Togl *togl )</CODE>
-<DD>
-    Returns the height of the given Togl widget.  Typically called in the
+<dl>
+<dt><code><a name="Cfuncs">int Togl_Height( struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns the height of the given Togl widget.  Typically called in the
     function registered with Togl_ReshapeFunc().
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>Tcl_Interp *Togl_Interp( struct Togl *togl )</CODE>
-<DD>
-    Returns the Tcl interpreter associated with the given Togl widget.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">Tcl_Interp *Togl_Interp( struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns the Tcl interpreter associated with the given Togl widget.
+</a></dd></dl>
 
-<H3>Color Index Mode Functions</H3>
+<h3><a name="Cfuncs">Color Index Mode Functions</a></h3>
 
-<P>
-These functions are only used for color index mode.
-</P>
+<p>
+<a name="Cfuncs">These functions are only used for color index mode.
+</a></p>
 
-<DL>
-<DT><CODE>unsigned long Togl_AllocColor( struct Togl *togl, float red, float green, float blue )</CODE>
-<DD>
-    Allocate a color from a read-only colormap.  Given a color specified
+<dl>
+<dt><code><a name="Cfuncs">unsigned long Togl_AllocColor( struct Togl *togl, float red, float green, float blue )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Allocate a color from a read-only colormap.  Given a color specified
     by red, green, and blue return a colormap index (aka pixel value)
     whose entry most closely matches the red, green, blue color.  Red,
     green, and blue are values in [0,1].  This function is only used in
     color index mode when the -privatecmap option is false.
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_FreeColor( struct Togl *togl, unsigned long index )</CODE>
-<DD>
-    Free a color in a read-only colormap.  Index is a value which was
+<dl>
+<dt><code><a name="Cfuncs">void Togl_FreeColor( struct Togl *togl, unsigned long index )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Free a color in a read-only colormap.  Index is a value which was
     returned by the Togl_AllocColor() function.  This function is only
     used in color index mode when the -privatecmap option is false.
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_SetColor( struct Togl *togl,
-                    int index, float red, float green, float blue )</CODE>
-<DD>
-    Load the colormap entry specified by index with the given red, green
+<dl>
+<dt><code><a name="Cfuncs">void Togl_SetColor( struct Togl *togl,
+                    int index, float red, float green, float blue )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Load the colormap entry specified by index with the given red, green
     and blue values.  Red, green, and blue are values in [0,1].  This
     function is only used in color index mode when the -privatecmap option
     is true.
-</DL>
+</a></dd></dl>
 
 
-<H3>Font Functions</H3>
+<h3><a name="Cfuncs">Font Functions</a></h3>
 
-<DL>
-<DT><CODE>GLuint Togl_LoadBitmapFont( struct Togl *togl,
-			const char *fontname )</CODE>
-<DD>
-    Load the named font as a set of glBitmap display lists.
-    <VAR>fontname</VAR> may be one of
-    <CODE>
-    <UL>
-    <LI>TOGL_BITMAP_8_BY_13
-    <LI>TOGL_BITMAP_9_BY_15
-    <LI>TOGL_BITMAP_TIMES_ROMAN_10
-    <LI>TOGL_BITMAP_TIMES_ROMAN_24
-    <LI>TOGL_BITMAP_HELVETICA_10
-    <LI>TOGL_BITMAP_HELVETICA_12
-    <LI>TOGL_BITMAP_HELVETICA_18
-    </CODE>
-    <LI>or any X11 font name
-    </UL>
-    Zero is returned if this function fails.
-    <BR>
-    <BR>
-    After Togl_LoadBitmapFont() has been called, returning <VAR>fontbase</VAR>,
-    you can render a string <EM>s</EM> with:
-    <BR>
-    <CODE>
+<dl>
+<dt><code><a name="Cfuncs">GLuint Togl_LoadBitmapFont( struct Togl *togl,
+			const char *fontname )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Load the named font as a set of glBitmap display lists.
+    <var>fontname</var> may be one of
+    <code>
+    </code></a><ul>
+<a name="Cfuncs">    <li>TOGL_BITMAP_8_BY_13
+    </li><li>TOGL_BITMAP_9_BY_15
+    </li><li>TOGL_BITMAP_TIMES_ROMAN_10
+    </li><li>TOGL_BITMAP_TIMES_ROMAN_24
+    </li><li>TOGL_BITMAP_HELVETICA_10
+    </li><li>TOGL_BITMAP_HELVETICA_12
+    </li><li>TOGL_BITMAP_HELVETICA_18
+    
+    </li><li>or any X11 font name
+    </li></a></ul>
+<a name="Cfuncs">    Zero is returned if this function fails.
+    <br>
+    <br>
+    After Togl_LoadBitmapFont() has been called, returning <var>fontbase</var>,
+    you can render a string <em>s</em> with:
+    <br>
+    <code>
 	glListBase( fontbase );
-    <BR>
+    <br>
 	glCallLists( strlen(s), GL_BYTE, s );
-    </CODE>
-    <BR>
-    <BR>
+    </code>
+    <br>
+    <br>
     To maximize the portability of your application it is best to use one
     of the predefined TOGL_BITMAP_* fonts.
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_UnloadBitmapFont( struct Togl *togl, GLuint fontbase )
-</CODE>
-<DD>
-    Destroys the bitmap display lists created by by Togl_LoadBitmapFont().
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">void Togl_UnloadBitmapFont( struct Togl *togl, GLuint fontbase )
+</a></code>
+</dt><dd>
+<a name="Cfuncs">    Destroys the bitmap display lists created by by Togl_LoadBitmapFont().
+</a></dd></dl>
 
-<H3>Client Data Functions</H3>
+<h3><a name="Cfuncs">Client Data Functions</a></h3>
 
-<DL>
-<DT><CODE>void Togl_SetClientData( struct Togl *togl, ClientData clientData)</CODE>
-<DD>
-    <EM>clientData</EM> is a pointer to an arbitrary user data structure.
+<dl>
+<dt><code><a name="Cfuncs">void Togl_SetClientData( struct Togl *togl, ClientData clientData)</a></code>
+</dt><dd>
+<a name="Cfuncs">    <em>clientData</em> is a pointer to an arbitrary user data structure.
     Each Togl struct has such a pointer.
     This function sets the Togl widget's client data pointer.
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>ClientData Togl_GetClientData( const struct Togl *togl )</CODE>
-<DD>
-    <EM>clientData</EM> is a pointer to an arbitrary user data structure.
+<dl>
+<dt><code><a name="Cfuncs">ClientData Togl_GetClientData( const struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    <em>clientData</em> is a pointer to an arbitrary user data structure.
     Each Togl struct has such a pointer.
     This function returns the Togl widget's client data pointer.
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_ClientData( ClientData clientData)</CODE>
-<DD>
-    <EM>clientData</EM> is a pointer to an arbitrary user data structure.
+<dl>
+<dt><code><a name="Cfuncs">void Togl_ClientData( ClientData clientData)</a></code>
+</dt><dd>
+<a name="Cfuncs">    <em>clientData</em> is a pointer to an arbitrary user data structure.
     Set default client data pointer for subsequent new Togl widgets.
     Default value is NULL.
-</DL>
+</a></dd></dl>
 
 
-<H3>Overlay Functions</H3>
+<h3><a name="Cfuncs">Overlay Functions</a></h3>
 
-<P>
-These functions are modelled after GLUT's overlay sub-API.
-</P>
+<p>
+<a name="Cfuncs">These functions are modelled after GLUT's overlay sub-API.
+</a></p>
 
-<DL>
-<DT><CODE>void Togl_UseLayer( struct Togl *togl, int layer )</CODE>
-<DD>
-    Select the layer into which subsequent OpenGL rendering will be
-    directed.  <EM>layer</EM> may be either <EM>TOGL_OVERLAY</EM> or
-    <EM>TOGL_NORMAL</EM>.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">void Togl_UseLayer( struct Togl *togl, int layer )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Select the layer into which subsequent OpenGL rendering will be
+    directed.  <em>layer</em> may be either <em>TOGL_OVERLAY</em> or
+    <em>TOGL_NORMAL</em>.
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_ShowOverlay( struct Togl *togl )</CODE>
-<DD>
-    Display the overlay planes, if any.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">void Togl_ShowOverlay( struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Display the overlay planes, if any.
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_HideOverlay( struct Togl *togl )</CODE>
-<DD>
-    Hide the overlay planes, if any.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">void Togl_HideOverlay( struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Hide the overlay planes, if any.
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_PostOverlayRedisplay( struct Togl *togl )</CODE>
-<DD>
-    Signal that the overlay planes should be redraw.  
+<dl>
+<dt><code><a name="Cfuncs">void Togl_PostOverlayRedisplay( struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Signal that the overlay planes should be redraw.  
     When Tk is next idle the user's C overlay display callback will be invoked.
     This is typically called from within a Togl sub-command which was
     registered with Togl_CreateCommand().
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_OverlayDisplayFunc( Togl_Callback *proc )</CODE>
-<DD>
-    Registers the C callback function which should be called to redraw the
+<dl>
+<dt><code><a name="Cfuncs">void Togl_OverlayDisplayFunc( Togl_Callback *proc )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Registers the C callback function which should be called to redraw the
     overlay planes.  This is the function which will be called in
     response to Togl_PostOverlayRedisplay().
     The callback must be of the form:
-<PRE>
-	void RedrawOverlay( struct Togl *togl )
+</a><pre><a name="Cfuncs">	void RedrawOverlay( struct Togl *togl )
 	{
 	   ...your code...
 	}
-</PRE>
-</DL>
+</a></pre>
+</dd></dl>
 
-<DL>
-<DT><CODE>int Togl_ExistsOverlay( struct Togl *togl )</CODE>
-<DD>
-    Returns 1 if overlay planes exist, 0 otherwise.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">int Togl_ExistsOverlay( struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns 1 if overlay planes exist, 0 otherwise.
+</a></dd></dl>
 
-<DL>
-<DT><CODE>int Togl_GetOverlayTransparentValue( const struct Togl *togl )</CODE>
-<DD>
-    Returns the color index of the overlay's transparent pixel value.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">int Togl_GetOverlayTransparentValue( const struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns the color index of the overlay's transparent pixel value.
+</a></dd></dl>
 
-<DL>
-<DT><CODE>int Togl_IsMappedOverlay( const struct Togl *togl )</CODE>
-<DD>
-    Returns 1 if the overlay planes are currently displayed, 0 otherwise.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">int Togl_IsMappedOverlay( const struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns 1 if the overlay planes are currently displayed, 0 otherwise.
+</a></dd></dl>
 
-<DL>
-<DT><CODE>unsigned long Togl_AllocColorOverlay( const struct Togl *togl,
-    float red, float green, float blue )</CODE>
-<DD>
-    Allocate a color in the overlay planes.  Red, green, and blue are
+<dl>
+<dt><code><a name="Cfuncs">unsigned long Togl_AllocColorOverlay( const struct Togl *togl,
+    float red, float green, float blue )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Allocate a color in the overlay planes.  Red, green, and blue are
     values in [0,1].  Return the color index or -1 if the allocation
     fails.
-</DL>
+</a></dd></dl>
 
-<DL>
-<DT><CODE>void Togl_FreeColorOverlay( const struct Togl *togl, unsigned long index )</CODE>
-<DD>
-    Free a color which was allocated with Togl_AllocColorOverlay().
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">void Togl_FreeColorOverlay( const struct Togl *togl, unsigned long index )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Free a color which was allocated with Togl_AllocColorOverlay().
+</a></dd></dl>
 
 
-<H3>X11-only Functions</H3>
+<h3><a name="Cfuncs">X11-only Functions</a></h3>
 
-<P>
-These functions are only implemented on systems using the X Window System.
+<p>
+<a name="Cfuncs">These functions are only implemented on systems using the X Window System.
 We recommend that you avoid using these functions in your application since
 they are not portable to other operating/window systems.
-</P>
-<P>
-If you choose to use these functions in your application your must first
+</a></p>
+<p>
+<a name="Cfuncs">If you choose to use these functions in your application your must first
 define the TOGL_X11 preprocessor symbol before including the Togl header
 file:
-</P>
-<PRE>
-    #define TOGL_X11
+</a></p>
+<pre><a name="Cfuncs">    #define TOGL_X11
     #include "Togl.h"
-</PRE>
+</a></pre>
 
 
-<DL>
-<DT><CODE>Display *Togl_Display( const struct Togl *togl )</CODE>
-<DD>
-    Returns the X Display of a Togl widget.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">Display *Togl_Display( const struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns the X Display of a Togl widget.
+</a></dd></dl>
 
-<DL>
-<DT><CODE>Screen *Togl_Screen( const struct Togl *togl )</CODE>
-<DD>
-    Returns the X Screen of a Togl widget.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">Screen *Togl_Screen( const struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns the X Screen of a Togl widget.
+</a></dd></dl>
 
-<DL>
-<DT><CODE>int Togl_ScreenNumber( const struct Togl *togl )</CODE>
-<DD>
-    Returns the X screen number of a Togl widget.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">int Togl_ScreenNumber( const struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns the X screen number of a Togl widget.
+</a></dd></dl>
 
-<DL>
-<DT><CODE>Colormap Togl_Colormap( const struct Togl *togl )</CODE>
-<DD>
-    Returns the X Colormap used by a Togl widget.
-</DL>
+<dl>
+<dt><code><a name="Cfuncs">Colormap Togl_Colormap( const struct Togl *togl )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Returns the X Colormap used by a Togl widget.
+</a></dd></dl>
 
 
-<H3>Postscript Output</H3>
-<P>
+<h3><a name="Cfuncs">Postscript Output</a></h3>
+<p>
 
-<DL>
-<DT><CODE>int Togl_DumpToEpsFile( const struct Togl *togl,
-          const char *filename, int rgbFlag, void (*user_redraw)() )</CODE>
-<DD>
-    Generate an encapsulated Postscript file of the image in a Togl widget.
-    <EM>filename</EM> is the name of the file to generate.
-    If <EM>rgbFlag</EM> is non-zero then an RGB image file is written,
+</p><dl>
+<dt><code><a name="Cfuncs">int Togl_DumpToEpsFile( const struct Togl *togl,
+          const char *filename, int rgbFlag, void (*user_redraw)() )</a></code>
+</dt><dd>
+<a name="Cfuncs">    Generate an encapsulated Postscript file of the image in a Togl widget.
+    <em>filename</em> is the name of the file to generate.
+    If <em>rgbFlag</em> is non-zero then an RGB image file is written,
     else a grayscale image file is written.
-    <EM>user_redraw</EM> is a pointer to the function which will render the
+    <em>user_redraw</em> is a pointer to the function which will render the
     desired image.  This will typically be the same as the function passed
     to Togl_DisplayFunc().
-</DL>
+</a></dd></dl>
 
 
-<BR>
-<A NAME="TclFuncs">
-<H2>Tcl Togl commands</H2>
+<a name="Cfuncs"><br>
+</a><a name="TclFuncs">
+</a><h2><a name="TclFuncs">Tcl Togl commands</a></h2>
 
-<P>
-These are the Togl commands one may call from a Tcl program.
-</P>
+<p>
+<a name="TclFuncs">These are the Togl commands one may call from a Tcl program.
+</a></p>
 
-<DL>
-<DT><CODE>togl <VAR>pathName</VAR> [options]</CODE>
-<DD>
-	Creates a new togl widget with name <VAR>pathName</VAR> and
+<dl>
+<dt><code><a name="TclFuncs">togl <var>pathName</var> [options]</a></code>
+</dt><dd>
+<a name="TclFuncs">	Creates a new togl widget with name <var>pathName</var> and
 	an optional list of configuration options.  Options include:
-<PRE>
-
-Option		Default	Comments
+</a><pre>
+<a name="TclFuncs">Option		Default	Comments
 ---------------	------- ------------------------------------------------
 -width		400	Width of widget in pixels.
 -height		400	Height of widget in pixels.
@@ -630,224 +611,277 @@ Option		Default	Comments
 -time           1       Specifies the interval, in milliseconds, for
                         calling the C timer callback function which
                         was registered with Togl_TimerFunc.
-</PRE>
-</DL>
+
+-sharelist      ""      Name of an existing Togl widget with which to
+                        share display lists.
+                        NOT YET IMPLEMENTED FOR WINDOWS 95/NT.
+
+-sharecontext   ""      Name of an existing Togl widget with which to
+                        share the OpenGL context.  NOTE:  most other
+                        attributes such as double buffering, RGBA vs CI,
+                        ancillary buffer specs, etc are then ignored.
+                        NOT YET IMPLEMENTED FOR WINDOWS 95/NT.
+
+-indirect       false   If present, request an indirect rendering context.
+                        A direct rendering context is normally requested.
+                        NOT SIGNIFICANT FOR WINDOWS 95/NT.
+
+</a></pre>
+</dd></dl>
 
 
-<DL>
-<DT><CODE><VAR>pathName</VAR> configure</CODE>
-<DD>
-    Returns all configuration records for the named togl widget.
-</DL>
+<dl>
+<dt><code><var><a name="TclFuncs">pathName</a></var><a name="TclFuncs"> configure</a></code>
+</dt><dd>
+<a name="TclFuncs">    Returns all configuration records for the named togl widget.
+</a></dd></dl>
 
-<DL>
-<DT><CODE><VAR>pathName</VAR> configure <VAR>-option</VAR></CODE>
-<DD>
-	Returns configuration information for the specifed <VAR>option</VAR>
+<dl>
+<dt><code><var><a name="TclFuncs">pathName</a></var><a name="TclFuncs"> configure <var>-option</var></a></code>
+</dt><dd>
+<a name="TclFuncs">	Returns configuration information for the specifed <var>option</var>
 	which may be one of:
-	<DL>
-	<DT><CODE>-width</CODE>
-	<DD>
+	</a><dl>
+<a name="TclFuncs">	<dt><code>-width</code>
+	</dt><dd>
 		Returns the width configuration of the widget in the form:
-		<BR>
-		<CODE>-width width Width <VAR>W</VAR> <VAR>w</VAR></CODE>
-		<BR>
-		where <VAR>W</VAR> is the default width in pixels
-		and <VAR>w</VAR> is the current width in pixels
-	</DL>
-	<DL>
-	<DT><CODE>-height</CODE>
-	<DD>
+		<br>
+		<code>-width width Width <var>W</var> <var>w</var></code>
+		<br>
+		where <var>W</var> is the default width in pixels
+		and <var>w</var> is the current width in pixels
+	</dd></a></dl>
+<a name="TclFuncs">	</a><dl>
+<a name="TclFuncs">	<dt><code>-height</code>
+	</dt><dd>
 		Returns the height configuration of the widget in the form:
-		<BR>
-		<CODE>-height height Height <VAR>H</VAR> <VAR>h</VAR></CODE>
-		<BR>
-		where <VAR>H</VAR> is the default height in pixels
-		and <VAR>h</VAR> is the current height in pixels
-	</DL>
-	<DL>
-	<DT><CODE>-extensions</CODE>
-	<DD>
+		<br>
+		<code>-height height Height <var>H</var> <var>h</var></code>
+		<br>
+		where <var>H</var> is the default height in pixels
+		and <var>h</var> is the current height in pixels
+	</dd></a></dl>
+<a name="TclFuncs">	</a><dl>
+<a name="TclFuncs">	<dt><code>-extensions</code>
+	</dt><dd>
 		Returns a list of OpenGL extensions available.  For example:
-		<CODE>GL_EXT_polygon_offset GL_EXT_vertex_array</CODE>
-	</DL>
-</PRE>
-</DL>
+		<code>GL_EXT_polygon_offset GL_EXT_vertex_array</code>
+	</dd></a></dl>
 
-<DL>
-<DT><CODE><VAR>pathName</VAR> configure <VAR>-option</VAR> <VAR>value</VAR></CODE>
-<DD>
-    Reconfigure a Togl widget.  <VAR>option</VAR> may be one of:
-	<DL>
-	<DT><CODE>-width</CODE>
-	<DD>Resize the widget to <VAR>value</VAR> pixels wide
-	</DL>
-	<DL>
-	<DT><CODE>-height</CODE>
-	<DD>Resize the widget to <VAR>value</VAR> pixels high
-	</DL>
-</DL>
+</dd></dl>
 
-<DL>
-<DT><CODE><VAR>pathName</VAR> render</CODE>
-<DD>
-    Causes the render callback function to be called for <VAR>pathName</VAR>.
-</DL>
+<dl>
+<dt><code><var><a name="TclFuncs">pathName</a></var><a name="TclFuncs"> configure <var>-option</var> <var>value</var></a></code>
+</dt><dd>
+<a name="TclFuncs">    Reconfigure a Togl widget.  <var>option</var> may be one of:
+	</a><dl>
+<a name="TclFuncs">	<dt><code>-width</code>
+	</dt><dd>Resize the widget to <var>value</var> pixels wide
+	</dd></a></dl>
+<a name="TclFuncs">	</a><dl>
+<a name="TclFuncs">	<dt><code>-height</code>
+	</dt><dd>Resize the widget to <var>value</var> pixels high
+	</dd></a></dl>
+</dd></dl>
 
-<DL>
-<DT><CODE><VAR>pathName</VAR> swapbuffers</CODE>
-<DD>
-    Causes front/back buffers to be swapped if in double buffer mode.
-</DL>
+<dl>
+<dt><code><var><a name="TclFuncs">pathName</a></var><a name="TclFuncs"> render</a></code>
+</dt><dd>
+<a name="TclFuncs">    Causes the render callback function to be called for <var>pathName</var>.
+</a></dd></dl>
 
-<DL>
-<DT><CODE><VAR>pathName</VAR> makecurrent</CODE>
-<DD>
-    Make the widget specified by <VAR>pathName</VAR> the current one.
-</DL>
+<dl>
+<dt><code><var><a name="TclFuncs">pathName</a></var><a name="TclFuncs"> swapbuffers</a></code>
+</dt><dd>
+<a name="TclFuncs">    Causes front/back buffers to be swapped if in double buffer mode.
+</a></dd></dl>
 
-
+<dl>
+<dt><code><var><a name="TclFuncs">pathName</a></var><a name="TclFuncs"> makecurrent</a></code>
+</dt><dd>
+<a name="TclFuncs">    Make the widget specified by <var>pathName</var> the current one.
+</a></dd></dl>
 
 
-<BR>
-<A NAME="Demo">
-<H2>Demo Programs</H2>
 
-<P>
-There are four demo programs:
-</P>
 
-<UL>
-<LI>double - compares single vs double buffering with two Togl widgets
-<LI>texture - lets you play with texture mapping options
-<LI>index - demo of using color index mode
-<LI>overlay - example of using overlay planes (requires overlay hardware)
-</UL>
+<a name="TclFuncs"><br>
+</a><a name="Demo">
+</a><h2><a name="Demo">Demo Programs</a></h2>
 
-<P>
-To compile the demos, edit the Makefile to suit your system, then
+<p>
+<a name="Demo">There are five demo programs:
+</a></p>
+
+<ul>
+<li><a name="Demo">double - compares single vs double buffering with two Togl widgets
+</a></li><li><a name="Demo">texture - lets you play with texture mapping options
+</a></li><li><a name="Demo">index - demo of using color index mode
+</a></li><li><a name="Demo">overlay - example of using overlay planes (requires overlay hardware)
+</a></li><li><a name="Demo">stereo - SGI-only stereo example
+</a></li><li><a name="Demo">gears - spinning gears demo
+</a></li></ul>
+
+<p>
+<a name="Demo">To compile the demos, edit the Makefile to suit your system, then
 type "make".
 The stock Makefile is setup for Linux.
 To run a demo just type "double" or "texture" or "index" or "overlay".
-</P>
+</a></p>
 
 
 
-<BR>
-<BR>
-<A NAME="Problems">
-<H2>Common Questions and Problems</H2>
+<a name="Demo"><br>
+<br>
+</a><a name="Stereo">
+</a><h2><a name="Stereo">Stereo Rendering</a></h2>
 
-<P>
-If you have something to add to this section please let us know.
-</P>
+<p>
+<a name="Stereo">Togl on SGI systems supports full-screen stereo.
+Quad-buffered stereo-in-a-window is not supported at this time.
+To enable stereo support you must add -DSTEREO to the cc compiler flags.
+Reportedly, SGI O2's need patches 1979 and 2447 in order to use stereo.
+Also, the frame buffer must be set to the 32+32 pixel format and the
+monitor set to 1024x768_96s mode.
+</a></p>
 
-<H3>Bad Match X errors on Sun systems</H3>
-<P>
-There's a bug in Sun's XmuLookupStandardColormap X library function.
+
+<a name="Stereo"><br>
+<br>
+</a><a name="Problems">
+</a><h2><a name="Problems">Common Questions and Problems</a></h2>
+
+<p>
+<a name="Problems">If you have something to add to this section please let us know.
+</a></p>
+
+<h3><a name="Problems">Bad Match X errors on Sun systems</a></h3>
+<p>
+<a name="Problems">There's a bug in Sun's XmuLookupStandardColormap X library function.
 If you compile togl.c with the SOLARIS_BUG symbol defined (-DSOLARIS_BUG)
 this function call will be omitted.
-</P>
+</a></p>
 
 
 
-<BR>
-<BR>
-<A NAME="Bugs">
-<H2>Reporting Bugs</H2>
+<a name="Problems"><br>
+<br>
+</a><a name="Bugs">
+</a><h2><a name="Bugs">Reporting Bugs</a></h2>
 
-<P>
-If you find a bug in Togl please report it to both Ben and Brian.
+<p>
+<a name="Bugs">There is a bug database on the
+</a><a href="http://sourceforge.net/project/?form_grp=519">Togl Project Page</a>.
+You may also discuss bugs on the mailing list.
+</p>
+<p>
 When reporting bugs please provide as much information as possible.
 Also, it's very helpful to us if you can provide an example program
 which demonstrates the problem.
-</P>
-
-<P>
-Windows 95/NT problems should be sent to Robert K. Casto
-<A HREF="mailto:casto@cis.ohio-state.edu">casto@cis.ohio-state.edu</A>,
-author of the Windows 95/NT support for Togl.
-</P>
+</p>
 
 
 
-<BR>
-<A NAME="Version">
-<H2>Version History</H2>
+<br>
+<a name="Version">
+</a><h2><a name="Version">Version History</a></h2>
 
-<H3>Version 1.0 - March, 1996</H3>
-<UL>
-<LI>Initial version
-</UL>
+<h3><a name="Version">Version 1.0 - March, 1996</a></h3>
+<ul>
+<li><a name="Version">Initial version
+</a></li></ul>
 
-<H3>Version 1.1 (never officially released)</H3>
-<UL>
-<LI>Added Togl_LoadBitmapFont function
-<LI>Fixed a few bugs
-</UL>
+<h3><a name="Version">Version 1.1 (never officially released)</a></h3>
+<ul>
+<li><a name="Version">Added Togl_LoadBitmapFont function
+</a></li><li><a name="Version">Fixed a few bugs
+</a></li></ul>
 
-<H3>Version 1.2 - November, 1996</H3>
-<UL>
-<LI>added swapbuffers and makecurrent Tcl commands
-<LI>More bug fixes
-<LI>Upgraded to suport Tcl 7.6 and Tk 4.2
-<LI>Added stereo and overlay plane support
-<LI>Added Togl_Get/SetClientData() functions
-<LI>Added Togl_DestroyFunc()
-</UL>
+<h3><a name="Version">Version 1.2 - November, 1996</a></h3>
+<ul>
+<li><a name="Version">added swapbuffers and makecurrent Tcl commands
+</a></li><li><a name="Version">More bug fixes
+</a></li><li><a name="Version">Upgraded to suport Tcl 7.6 and Tk 4.2
+</a></li><li><a name="Version">Added stereo and overlay plane support
+</a></li><li><a name="Version">Added Togl_Get/SetClientData() functions
+</a></li><li><a name="Version">Added Togl_DestroyFunc()
+</a></li></ul>
 
-<H3>Version 1.3 - May 2, 1997</H3>
-<UL>
-<LI>fixed a bug in Togl_Configure()
-<LI>fixed a compilation problem in using Tcl_PkgProvide() with Tcl < 7.4
-<LI>new overlay functions: Togl_ExistsOverlay, Togl_GetOverlayTransparentValue,
+<h3><a name="Version">Version 1.3 - May 2, 1997</a></h3>
+<ul>
+<li><a name="Version">fixed a bug in Togl_Configure()
+</a></li><li><a name="Version">fixed a compilation problem in using Tcl_PkgProvide() with Tcl &lt; 7.4
+</a></li><li><a name="Version">new overlay functions: Togl_ExistsOverlay, Togl_GetOverlayTransparentValue,
     Togl_IsMappedOverlay, Togl_AllocColorOverlay, Togl_FreeColorOverlay
-<LI>added X11 functions: Togl_Display, Togl_Screen, Togl_ScreenNumber,
+</a></li><li><a name="Version">added X11 functions: Togl_Display, Togl_Screen, Togl_ScreenNumber,
     Togl_Colormap
-<LI>added Togl_DumpToEpsFile function
-<LI>fixed a C++ compilation problem
-<LI>more robust overlay code
-<LI>added timers (Togl_TimerFunc) from Peter Dern and Elmar Gerwalin
-</UL>
+</a></li><li><a name="Version">added Togl_DumpToEpsFile function
+</a></li><li><a name="Version">fixed a C++ compilation problem
+</a></li><li><a name="Version">more robust overlay code
+</a></li><li><a name="Version">added timers (Togl_TimerFunc) from Peter Dern and Elmar Gerwalin
+</a></li></ul>
 
-<H3>Version 1.4 - September 17, 1997</H3>
-<UL>
-<LI>Ported to Windows NT (Robert Casto)
-<LI>Updated for Tcl/Tk 8.0
-<LI>Added many config flags (-redsize, -depthsize, etc) (Matthias Ott)
-<LI>Added Togl_Set*Func() functions to reassign callback functions (Matthias Ott)
-<LI>Added Togl_ResetDefaultCallbacks() and Togl_ClientData() functions (Greg Couch)
-</UL>
+<h3><a name="Version">Version 1.4 - September 17, 1997</a></h3>
+<ul>
+<li><a name="Version">Ported to Windows NT (Robert Casto)
+</a></li><li><a name="Version">Updated for Tcl/Tk 8.0
+</a></li><li><a name="Version">Added many config flags (-redsize, -depthsize, etc) (Matthias Ott)
+</a></li><li><a name="Version">Added Togl_Set*Func() functions to reassign callback functions (Matthias Ott)
+</a></li><li><a name="Version">Added Togl_ResetDefaultCallbacks() and Togl_ClientData() functions (Greg Couch)
+</a></li></ul>
+
+<h3><a name="Version">Version 1.5 - September 18, 1998</a></h3>
+<ul>
+<li><a name="Version">Fixed a few Unix and Windows compilation bugs
+</a></li><li><a name="Version">Added Ben Evan's SGI stereo functions
+</a></li><li><a name="Version">Multiple expose events now reduced to one redraw
+</a></li><li><a name="Version">Destroying Togl widgets caused problems, patched by Adrian J. Chung
+</a></li><li><a name="Version">Added Togl_TkWin() function
+</a></li><li><a name="Version">Updated for Tcl/Tk 8.0p2
+</a></li><li><a name="Version">Added gears demo from Philip Quaife
+</a></li><li><a name="Version">Added <code>-sharelist</code> and <code>-sharecontext</code> config flags
+</a></li><li><a name="Version">Fixed a few overlay update bugs
+</a></li><li><a name="Version">Added <code>-indirect</code> config flag
+</a></li></ul>
+
+<h3><a name="Version">Version 1.6 - January ??, 2000</a></h3>
+<ul>
+<li><a name="Version">Added Togl_SetTimerFunc function
+</a></li><li><a name="Version">Updated for Tcl/Tk 8.0.5 and 8.1
+</a></li><li><a name="Version">Context sharing added for Windows
+</a></li></ul>
 
 
-<H3>Future plans</H3>
-<UL>
-<LI>Port to Windows '95 and Macintosh (any volunteers?)
-</UL>
+
+<h3><a name="Version">Future plans</a></h3>
+<ul>
+<li><a name="Version">Port to the Macintosh (any volunteers?)
+</a></li></ul>
 
 
-<BR>
-<A NAME="Contrib">
-<H2>Contributors</H2>
+<a name="Version"><br>
+</a><a name="Contrib">
+</a><h2><a name="Contrib">Contributors</a></h2>
 
-<P>
-Several people have contributed new features to Togl.  Among them are:
-</P>
+<p>
+<a name="Contrib">Several people have contributed new features to Togl.  Among them are:
+</a></p>
 
-<UL>
-<LI>Ramon Ramsan - overlay plane support
-<LI>Miguel A. De Riera Pasenau - more overlay functions, X11 functions
+<ul>
+<li><a name="Contrib">Ramon Ramsan - overlay plane support
+</a></li><li><a name="Contrib">Miguel A. De Riera Pasenau - more overlay functions, X11 functions
     and EPS output
-<LI>Peter Dern and Elmar Gerwalin - Togl_TimerFunc and related code
-<LI>Robert Casto - Windows NT port
-<LI>Geza Groma - Windows 95/NT patches
-</UL>
+</a></li><li><a name="Contrib">Peter Dern and Elmar Gerwalin - Togl_TimerFunc and related code
+</a></li><li><a name="Contrib">Robert Casto - Windows NT port
+</a></li><li><a name="Contrib">Geza Groma - Windows 95/NT patches
+</a></li><li><a name="Contrib">Ben Evans - SGI stereo support
+</a></li></ul>
 
-Many others have contributed bug fixes.  Thanks for your contributions!
+<a name="Contrib">Many others have contributed bug fixes.  Thanks for your contributions!
 
-<BR>
-<BR>
-<HR>
-Last edited on September 16, 1997 by Brian Paul.
+<br>
+<br>
+</a><hr>
+<a name="Contrib">Last edited on January 5, 2000 by Brian Paul.
 
-</BODY>
+</a></body></html>
