@@ -1,30 +1,6 @@
 antennavis for Debian
 ---------------------
 
-This package provides a tcl script called antenna.tcl which makes use of
-the TkAnt binary. antenna.tcl should be called from the command line.
-
-- Load a .nec file by clicking on 'Load Antenna File"
-- Next, click on "Compute RF Field"
-- nec2 will be started, enter the same name as the loaded file
-- When asked for output name it output.nec
-- The antenna pattern will be calculated and loaded
-
-There was only one example in the original package which worked. I have tried
-to modify some, so we have more working examples. One of the problems seems
-to come from the 'PT' card, which is unknown by the nec version inside debian.
-The examples are in /usr/share/doc/antennavis/examples.
-
-
-If you get the following warning at startup:
-
-Xlib:  extension "XFree86-DRI" missing on display ":0.0".
-
-This means that Direct Rendering is not working for your setup. It is not
-really something to worry about, antennavis will still work.
-
-
-I have tried make the window fit on a 1024x768 display. If I can find out more
-about tcl/tk, I could perhaps make it fit on even smaller screens.
+I am also the upstream maintainer for antennavis.
 
  -- Joop Stakenborg <pa3aba@debian.org>, Thu,  3 Mar 2005 19:43:19 +0100

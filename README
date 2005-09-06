@@ -4,7 +4,7 @@ _________________
 This software was written by Kenneth E. Harker in 1998. I liked the 3D images
 of the presented antenna patterns on Kenneth's web-site so much that I have
 put some effort into creating a useable software package out it. So I contacted
-Kenneth to ask him how he thought about further development. He is what he
+Kenneth to ask him how he thought about further development. Here is what he
 said:
 
 ______________________________________________________________________________
@@ -46,8 +46,28 @@ kenharker@kenharker.com
 http://www.kenharker.com/
 ______________________________________________________________________________
 
-I am currently looking into creating a project page for antennavis, so we can
-continue development on antennavis. Hopefully I can release an updated version
-soon.
+This package provides a tcl script called antenna.tcl which makes use of
+the TkAnt binary. antenna.tcl should be called from the command line.
 
-Joop Stakenborg <pg4i@amsat.org> april 2005.
+- Load a .nec file by clicking on 'Load Antenna File"
+- Next, click on "Compute RF Field"
+- nec2 will be started, enter the same name as the loaded file
+- When asked for output name it output.nec
+- The antenna pattern will be calculated and loaded
+
+There was only one example in the original package which worked. I have tried
+to modify some, so we have more working examples. One of the problems seems
+to come from the 'PT' card, which is unknown by the nec version inside debian.
+
+If you get the following warning at startup:
+
+Xlib:  extension "XFree86-DRI" missing on display ":0.0".
+
+This means that Direct Rendering is not working for your setup. It is not
+really something to worry about, antennavis will still work.
+
+Antennavis has a project page at http://savannah.nongnu.org/projects/antennavis.
+The future web page will be at http://www.qsl.net/pg4i/linux/antennavis. Feel
+free to send me an e-mail if you want to join in or if you have any comments.
+
+Joop Stakenborg <pg4i@amsat.org> september 2005.
