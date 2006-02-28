@@ -67,7 +67,10 @@
 #define SLICES_INIT         24   /**  Disks and cylinders have many slices  **/
 #define RINGS_INIT          1    /**  Disks and cylinders have many rings   **/
 
-
+typedef void (GLAPIENTRY *callback_t)();
+#ifndef CALLBACK
+#define CALLBACK
+#endif
 /*****************************************************************************/
 /*****************************************************************************/
 /**                                                                         **/
@@ -171,7 +174,7 @@ local void    TKA_Reshape(struct Togl *togl);
 local void    TKA_Rotate(GLfloat ax, GLfloat ay, GLfloat az);
 local GLfloat TKA_Angle(GLfloat size, GLfloat distance);
 local void    TKA_Disk(GLfloat radius, GLint slices, GLint rings);
-local void    TKA_ErrorCallback(GLenum errorCode);
+      void    CALLBACK TKA_ErrorCallback(GLenum errorCode);
       void    TKA_Cylinder(GLfloat radius,
                            GLfloat height,
                              GLint slices,
@@ -287,7 +290,7 @@ GLint TKA_Init(Tcl_Interp *interp) {
 
   /**  Init quadratics  **/
   assert(Qobj = gluNewQuadric());
-  gluQuadricCallback(Qobj, GLU_ERROR, TKA_ErrorCallback);
+  gluQuadricCallback(Qobj, GLU_ERROR, (callback_t)TKA_ErrorCallback);
   gluQuadricDrawStyle(Qobj, GLU_FILL);
   gluQuadricNormals(Qobj, GLU_FLAT);
 
@@ -488,7 +491,7 @@ local void TKA_Disk(GLfloat radius, GLint slices, GLint rings) {
 /*****************************************************************************/
 
 
-local void TKA_ErrorCallback(GLenum errorCode) {
+void CALLBACK TKA_ErrorCallback(GLenum errorCode) {
 
   const  GLubyte  *estring;  /**  Error string  **/
   
