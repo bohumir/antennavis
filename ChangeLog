@@ -3,7 +3,8 @@ antennavis (0.3)
   * First public release.
   * Uses autoconf which automatically searches for tcl and tk headers and
     libraries.
-  * Copyright notices added to all of the C files, header files and Makefile.
+  * Copyright notices added to all of the C files, header files and
+    Makefile.
   * License file added to the Models directory.
   * Provide a README with kenneth's current e-mail address and explanation
     of this effort.
@@ -12,12 +13,13 @@ antennavis (0.3)
     GenerateNECVolumeFile in ant.c, WriteVolumeCardFile and ParseVolumeData
     in pccard.c.
   * Attempt to create a useable package, build against togl-1.6.
-  * Call nec2 with the complete path.
+  * Call nec2 correctly.
   * Set height of the top frame to 350, so it fits on a 1024x768 display.
   * Rename input_nec to input.nec and output_nec to output.nec.
   * Remove help button and window, it is of no use.
   * Remove "Load Yagi" optionmenu, it is of no use.
   * Fixed a crash when output.nec not present.
   * The isosurfaces button has been removed, because it does nothing.
-  * The buttons have been moved to the display frame, which leaves a bit more
-    rome on the screen.
+  * The buttons have been moved to the display frame, which leaves a bit
+    more room on the screen.
+  * Several compilation fixes.

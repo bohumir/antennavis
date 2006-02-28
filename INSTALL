@@ -1,11 +1,13 @@
 You will need to install the tcl and tk development libraries and headers
 to compile antennavis. Version 8.4 is recommended, but it will also work
-with version 8.3.
+with version 8.3. I have tried to use autoconf, which will hopefully detect
+the needed libraries. You will only have to type: ./configure; make;
+make install.
 
 Antennavis also needs the OpenGL libraries and headers for compilation.
 Om my Debian system the package needed is called libglu1-xorg-dev or
 xlibmesa-glu-dev and xlibmesa-gl-dev.
 
 The resulting binary is called TkAnt and is used by the tcl script called
-antenna.tcl. You need to install nec2 into /usr/bin in order to have a working
-setup. See the README for more details.
+antenna.tcl. You need to install nec2 in your path in order to have a
+working setup. See the README for more details.
