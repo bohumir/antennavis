@@ -51,9 +51,12 @@ the TkAnt binary. antenna.tcl should be called from the command line.
 
 - Load a .nec file by clicking on 'Load Antenna File"
 - Next, click on "Compute RF Field"
-- nec2 will be started, enter the same name as the loaded file
-- When asked for output name it output.nec
+- nec2 will be started and input.nec and output.nec created
 - The antenna pattern will be calculated and loaded
+
+Antennavis will expect a nec2 binary somewhere in your path. The nec2 binary
+you are using should take filenames for arguments, e.g. "nec2 input.nec
+output.nec".
 
 There was only one example in the original package which worked. I have tried
 to modify some, so we have more working examples. One of the problems seems
