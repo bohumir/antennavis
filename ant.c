@@ -1171,7 +1171,7 @@ void ComputeField(bool changed) {
       }  /**  Error state  **/
       if (childpid == 0) {  /**  We are child  **/
         printf("Running NEC2 code...  please stand by...\n");
-        execlp("/usr/bin/nec2", (char *)0);  
+        execlp("nec2", "nec2", "input.nec", "output.nec", NULL);  
         exit(-1);  /**  We should never reach here  **/
       }  /**  We are child  **/
       else {  /**  We are parent  **/
