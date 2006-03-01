@@ -12,7 +12,7 @@ antennavis (0.3)
   * Remove unused functions associated with isosurfaces: ComputeVolumeData,
     GenerateNECVolumeFile in ant.c, WriteVolumeCardFile and ParseVolumeData
     in pccard.c.
-  * Attempt to create a useable package, build against togl-1.6.
+  * Attempt to create a useable package, build against togl-1.7.
   * Call nec2 correctly.
   * Set height of the top frame to 350, so it fits on a 1024x768 display.
   * Rename input_nec to input.nec and output_nec to output.nec.
