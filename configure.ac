@@ -1,8 +1,6 @@
-#					       -*- Autoconf -*-
-# Process this file with autoconf to produce a configure script.
-
 AC_PREREQ(2.57)
 AC_INIT(antennavis, 0.3, pg4i@amsat.org)
+AC_PREFIX_DEFAULT(/usr/local)
 AC_CONFIG_SRCDIR([AntennaWidget.c])
 
 # Checks for programs.
