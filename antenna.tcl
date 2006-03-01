@@ -134,7 +134,7 @@ proc CreateUserInterface {} {
       enablecolor disablecolor AntType
 
   # Give it a title
-  wm title . "Antenna Visualization Toolkit, Adrian Agogino, Kenneth Harker"
+  wm title . "Antenna Visualization Toolkit: Antennavis"
 
   # the basics
   set WTopFrame .top
