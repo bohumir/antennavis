@@ -76,10 +76,10 @@ set AbleLs {}
 set LightAbleLs {}
 
 # our font
-set font screen16
+set font "-*-helvetica-medium-r-*-*-*-*-*-*-*-*-*"
 
 # our bold font
-set boldfont screen-bold16
+set boldfont "-*-helvetica-bold-r-*-*-*-*-*-*-*-*-*"
 
 # our relief
 set relief groove
