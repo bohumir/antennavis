@@ -1,13 +1,13 @@
 Beyond Antennavis
 _________________
 
-This software was written by Kenneth E. Harker in 1998. I liked the 3D images
-of the presented antenna patterns on Kenneth's web-site so much that I have
-put some effort into creating a useable software package out it. So I contacted
-Kenneth to ask him how he thought about further development. Here is what he
-said:
+This software was written by Kenneth E. Harker in 1998. I liked the 3D 
+images of the presented antenna patterns on Kenneth's web-site so much 
+that I have put some effort into creating a useable software package out 
+it. So I contacted Kenneth to ask him how he thought about further 
+development. Here is what he said:
 
-______________________________________________________________________________
+___________________________________________________________________________
 On Fri, Mar 25, 2005 at 01:10:54PM +0100, Joop Stakenborg wrote:
 > Hi Kenneth,
 > 
@@ -44,23 +44,24 @@ If you would like to put it on sourceforge or wherever, that's fine with me.
 Kenneth E. Harker WM5R
 kenharker@kenharker.com
 http://www.kenharker.com/
-______________________________________________________________________________
+___________________________________________________________________________
 
-This package provides a tcl script called antenna.tcl which makes use of
-the TkAnt binary. antenna.tcl should be called from the command line.
+This package provides a tcl script called antennavis which makes 
+use of the TkAnt binary. Here are some usage notes:
 
 - Load a .nec file by clicking on 'Load Antenna File"
 - Next, click on "Compute RF Field"
 - nec2 will be started and input.nec and output.nec created
 - The antenna pattern will be calculated and loaded
 
-Antennavis will expect a nec2 binary somewhere in your path. The nec2 binary
-you are using should take filenames for arguments, e.g. "nec2 input.nec
-output.nec".
+Antennavis will expect a nec2 binary somewhere in your path. The nec2 
+binary you are using should take filenames for arguments, e.g. 
+"nec2 input.nec output.nec".
 
-There was only one example in the original package which worked. I have tried
-to modify some, so we have more working examples. One of the problems seems
-to come from the 'PT' card, which is unknown by the nec version inside debian.
+There was only one example in the original package which worked. I have 
+tried to modify some, so we have more working examples. One of the 
+problems seems to come from the 'PT' card, which is unknown by the 
+nec version inside debian.
 
 If you get the following warning at startup:
 
@@ -69,9 +70,11 @@ Xlib:  extension "XFree86-DRI" missing on display ":0.0".
 This means that Direct Rendering is not working for your setup. It is not
 really something to worry about, antennavis will still work.
 
-Antennavis has a project page at http://savannah.nongnu.org/projects/antennavis.
-The future web page will be at http://www.qsl.net/pg4i/linux/antennavis. Feel
-free to send me an e-mail if you want to join in or if you have any comments.
+Antennavis has a project page at 
+http://savannah.nongnu.org/projects/antennavis.
+The future web page will be at http://www.qsl.net/pg4i/linux/antennavis. 
+Feel free to send me an e-mail if you want to join in or if you have any 
+comments.
 
 The old homepage by Kenneth is still viewable at:
 http://n5xu.ae.utexas.edu/antennavis.
