@@ -9,5 +9,5 @@ Om my Debian system the package needed is called libglu1-xorg-dev or
 xlibmesa-glu-dev and xlibmesa-gl-dev.
 
 The resulting binary is called TkAnt and is used by the tcl script called
-antenna.tcl. You need to install nec2 in your path in order to have a
-working setup. See the README for more details.
+antennavis. You need to install nec2 in your path in order to have 
+a working setup. See the README for more details.
