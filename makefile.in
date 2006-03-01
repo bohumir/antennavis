@@ -85,7 +85,7 @@ configure:
 
 install: TkAnt
 	install -s TkAnt $(bindir)
-	install antenna.tcl $(bindir)
+	install antenna.tcl $(bindir)/antennavis
 
 uninstall:
 	-rm -f $(bindir)/TkAnt
