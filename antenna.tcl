@@ -85,10 +85,10 @@ set boldfont "-*-helvetica-bold-r-*-*-*-*-*-*-*-*-*"
 set relief groove
 
 # our borderwidth
-set borderwidth 2
+set borderwidth 1
 
 #our pad
-set pad 4
+set pad 1
 
 # our enable color
 set enablecolor ""
