@@ -35,6 +35,7 @@ prefix = @prefix@
 exec_prefix = @exec_prefix@
 bindir = @bindir@
 datadir = @datadir@
+mandir = @mandir@
 
 CFLAGS += -c -Wall $(CPPFLAGS)
 
@@ -86,10 +87,15 @@ configure:
 install: TkAnt
 	install -s TkAnt $(bindir)
 	install antenna.tcl $(bindir)/antennavis
+	mkdir -p $(mandir)/man1
+	install -m 0644 antennavis.1 $(mandir)/man1
+	install -m 0644 TkAnt.1 $(mandir)/man1
 
 uninstall:
 	-rm -f $(bindir)/TkAnt
 	-rm -f $(bindir)/antennavis
+	-rm -f $(mandir)/man1/antennavis.1
+	-rm -f $(mandir)/man1/TkAnt.1
 
 clean:
 	-rm -f $(clean-files)
