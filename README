@@ -47,16 +47,21 @@ http://www.kenharker.com/
 ___________________________________________________________________________
 
 This package provides a tcl script called antennavis which makes 
-use of the TkAnt binary. Here are some usage notes:
+use of the TkAnt binary. Antennavis will expect a nec2 binary 
+somewhere in your path. The nec2 binary you are using should take 
+filenames for arguments, e.g. "nec2 input.nec output.nec".
+
+In case you can't meet these requirements, you can download a
+statically linked nec2 version from:
+http://www.qsl.net/pg4i/download/nec2bin-11.tar.gz
+or: http://pg4i.mattsnetwork.co.uk/download/nec2bin-11.tar.gz
+
+Here are some usage notes:
 
 - Load a .nec file by clicking on 'Load Antenna File"
 - Next, click on "Compute RF Field"
 - nec2 will be started and input.nec and output.nec created
 - The antenna pattern will be calculated and loaded
-
-Antennavis will expect a nec2 binary somewhere in your path. The nec2 
-binary you are using should take filenames for arguments, e.g. 
-"nec2 input.nec output.nec".
 
 There was only one example in the original package which worked. I have 
 tried to modify some, so we have more working examples. One of the 
@@ -72,11 +77,11 @@ really something to worry about, antennavis will still work.
 
 Antennavis has a project page at 
 http://savannah.nongnu.org/projects/antennavis.
-The future web page will be at http://www.qsl.net/pg4i/linux/antennavis. 
-Feel free to send me an e-mail if you want to join in or if you have any 
-comments.
+Feel free to send me an e-mail if you want to join in or if you have 
+comments. There is also a web page at
+http://www.qsl.net/pg4i/linux/antennavis. 
 
 The old homepage by Kenneth is still viewable at:
 http://n5xu.ae.utexas.edu/antennavis.
 
-Joop Stakenborg <pg4i@amsat.org> september 2005.
+Joop Stakenborg <pg4i@amsat.org> march 2006.
