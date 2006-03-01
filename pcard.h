@@ -30,7 +30,7 @@
 
 #include <stdio.h>
 #include "ant.h"
-
+#include "togl.h"
 
 /*****************************************************************************/
 /*****************************************************************************/
@@ -43,10 +43,10 @@
 
 void  PrintTube(FILE *, Tube *, int);
 void  PrintTubeOffset(FILE *, Tube *, int, double, double, double);
-void  WriteCardFile(char *, Ant *, int, double);
-void  WriteMultAntsFile(char *, int, double);
+void  WriteCardFile(CONST84 char *, Ant *, int, double);
+void  WriteMultAntsFile(CONST84 char *, int, double);
 bool  CardToTube(char *, Tube *);
-void  ReadCardFile(char *, Ant *);
+void  ReadCardFile(CONST84 char *, Ant *);
 void  ParseFieldData(FILE *, Ant *, bool, bool);
 
 #endif

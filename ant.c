@@ -373,8 +373,8 @@ void DisplayField(Ant *antData) {
 void DisplaySelectedAnt(Ant *ant, GLint slices, GLint rings, bool selected) {
 
   double   boomlength;         /**  Length of the boom           **/
-  double   boomcenter;         /**  Distance to boom center      **/
-  double   boomheight;         /**  Height of boom above ground  **/
+  double   boomcenter=0;       /**  Distance to boom center      **/
+  double   boomheight=0;       /**  Height of boom above ground  **/
   double   boomwidth;          /**  Width of boom                **/
   double   boomshift;          /**  How far we need to center    **/
   GLfloat  selected_color[4];  /**  The selected color           **/
@@ -510,10 +510,10 @@ void DisplaySelectedAnt(Ant *ant, GLint slices, GLint rings, bool selected) {
 
 void DisplayAnt(GLint slices, GLint rings) {
 
-  double  median_x;    /**  Median X value               **/
-  double  median_y;    /**  Median Y value               **/
-  double  median_z;    /**  Median Z value               **/
-  double  boomheight;  /**  Height of boom above ground  **/
+  double  median_x=0;  /**  Median X value               **/
+  double  median_y=0;  /**  Median Y value               **/
+  double  median_z=0;  /**  Median Z value               **/
+  double  boomheight=0;/**  Height of boom above ground  **/
   int     i;           /**  Loop counter                 **/
   int     j;           /**  Loop counter                 **/
 
@@ -621,7 +621,7 @@ void InitAnt(Ant *ant) {
 /*****************************************************************************/
 
 
-void ReadFile(char *file_name) {
+void ReadFile(CONST84 char *file_name) {
 
   if (AntennasInScene == false) {
     TheAnts.ant_count = 0;
@@ -1089,7 +1089,7 @@ void ChangeCurrentTube(int count) {
 /*****************************************************************************/
 
 
-void GenerateNECFile(char *file_name) {
+void GenerateNECFile(CONST84 char *file_name) {
 
   curr_step_size = STEP_SIZE;
 

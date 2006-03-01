@@ -286,7 +286,7 @@ void PrintTubeOffset(FILE *f,
 /*****************************************************************************/
 
 
-void WriteCardFile(char *file_name, Ant *the_ant, int step_size, double freq) {
+void WriteCardFile(CONST84 char *file_name, Ant *the_ant, int step_size, double freq) {
 
   FILE *fout;            /**  Output file                 **/
   char *card;            /**  Ouput buffer                **/
@@ -345,7 +345,7 @@ void WriteCardFile(char *file_name, Ant *the_ant, int step_size, double freq) {
 /*****************************************************************************/
 
 
-void WriteMultAntsFile(char *file_name, int step_size, double freq) {
+void WriteMultAntsFile(CONST84 char *file_name, int step_size, double freq) {
 
   FILE *fout;            /**  Output file                 **/
   char *card;            /**  Ouput buffer                **/
@@ -494,7 +494,7 @@ bool CardToTube(char *card, Tube *tube) {
 /*****************************************************************************/
 
 
-void ReadCardFile(char *file_name, Ant *antData) {
+void ReadCardFile(CONST84 char *file_name, Ant *antData) {
 
   FILE   *fin;          /**  Input file             **/
   char    line[256];    /**  Input buffer           **/

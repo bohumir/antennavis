@@ -29,6 +29,7 @@
 #define ANT_H
 
 #include "MyTypes.h"
+#include "togl.h"
 #include <GL/gl.h>
 #include <GL/glu.h>
 
@@ -165,7 +166,7 @@ void    ToggleDrawMode(int);
 void    ChangeFrequency(double);
 void    DisplaySelectedAnt(Ant *, GLint, GLint, bool);
 void    DisplayAnt(GLint, GLint);
-void    ReadFile(char *);
+void    ReadFile(CONST84 char *);
 void    MoveCurrentTube(double, double, double);
 void    MoveCurrentWall(double, double, double);
 void    DoMoveCenter(double, double, double, double, double);
@@ -175,7 +176,7 @@ void    ScaleCurrentWall(double, double, double);
 void    ScaleCurrentTube(double, double);
 void    ChangeCurrentTube(int);
 void    ChangeCurrentAnt(int);
-void    GenerateNECFile(char *);
+void    GenerateNECFile(CONST84 char *);
 void    AddWall(void);
 void    ComputeField(bool);
 void    DeleteCurrentAnt(void);

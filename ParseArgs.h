@@ -74,7 +74,7 @@ struct PA_Config {
 
 extern GLint PA_ParseArgs(Tcl_Interp  *interp, 
                                GLint   argc, 
-                                char **argv,
+                               CONST84 char **argv,
                     struct PA_Config  *cfg, 
                                 void  *data);
 

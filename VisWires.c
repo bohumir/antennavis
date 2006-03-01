@@ -111,8 +111,8 @@ void ComputeColor(double val, double min, double max, GLfloat *color) {
 
 double GetBoomLength(Tube *tube) {
 
-  double  max;    /**  Max x               **/
-  double  min;    /**  Min x               **/
+  double  max=0;  /**  Max x               **/
+  double  min=0;  /**  Min x               **/
   bool    first;  /**  Is first elements?  **/
 
   first = true;  
@@ -160,8 +160,8 @@ double GetBoomLength(Tube *tube) {
 double GetBoomHeight(Tube *tube) {
 
   double  median;  /**  Our best guess so far  **/
-  double  max;     /**  Max x                  **/
-  double  min;     /**  Min x                  **/
+  double  max=0;   /**  Max x                  **/
+  double  min=0;   /**  Min x                  **/
   bool    first;   /**  Is first elements?     **/
 
   first = true;    
@@ -209,7 +209,7 @@ double GetBoomHeight(Tube *tube) {
 
 double GetVerticalHeight(Tube *tube) {
 
-  double  min;     /**  Min x                  **/
+  double  min=0;   /**  Min x                  **/
   bool    first;   /**  Is first elements?     **/
 
   first = true;    
@@ -282,7 +282,7 @@ double GetBoomWidth(Tube *tube) {
 
 double GetBoomShift(Tube *tube) {
 
-  double  min;    /**  Min x               **/
+  double  min=0;  /**  Min x               **/
   bool    first;  /**  Is first elements?  **/
 
   first = true;    

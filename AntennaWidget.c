@@ -182,33 +182,29 @@ local void    TKA_Disk(GLfloat radius, GLint slices, GLint rings);
       void    TKA_Cube(GLfloat size);
 local void    TKA_Create(struct Togl *togl);
 local void    TKA_Destroy(struct Togl *togl);
-local GLint   TKA_Reset(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_Eye(struct Togl *togl, GLint argc, char **argv);
+local GLint   TKA_Reset(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_Eye(struct Togl *togl, GLint argc, CONST84 char **argv);
 local void    TKA_SetMaterial(struct Material *m);
 local void    TKA_SetLight(struct Light *l, GLfloat eyemin, GLfloat eyemax);
-local GLint   TKA_Global(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_Material(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_Light(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_StdAnt(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_LoadAnt(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_DeleteAnt(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_AddElement(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_ControlTube(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_ControlAnt(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_ChangeCurrentTube(struct Togl *togl, GLint argc,char **argv);
-local GLint   TKA_ChangeCurrentAnt(struct Togl *togl, GLint argc,char **argv);
-local GLint   TKA_DrawRFPowerDensity(struct Togl  *togl, 
-                                           GLint   argc, 
-                                            char **argv);
-local GLint   TKA_SaveFile(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_SaveRGBImage(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_MoveCenter(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_GetVariable(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_ChangeDrawMode(struct Togl *togl, GLint argc, char **argv);
-local GLint   TKA_ChangeWireDrawMode(struct Togl  *togl, 
-                                           GLint   argc,
-                                            char **argv);
-local GLint   TKA_ChangeAntMode(struct Togl *togl, GLint argc, char **argv);
+local GLint   TKA_Global(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_Material(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_Light(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_StdAnt(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_LoadAnt(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_DeleteAnt(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_AddElement(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_ControlTube(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_ControlAnt(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_ChangeCurrentTube(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_ChangeCurrentAnt(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_DrawRFPowerDensity(struct Togl  *togl, GLint   argc, CONST84 char **argv);
+local GLint   TKA_SaveFile(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_SaveRGBImage(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_MoveCenter(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_GetVariable(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_ChangeDrawMode(struct Togl *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_ChangeWireDrawMode(struct Togl  *togl, GLint argc, CONST84 char **argv);
+local GLint   TKA_ChangeAntMode(struct Togl *togl, GLint argc, CONST84 char **argv);
 
 
 /*****************************************************************************/
@@ -673,7 +669,7 @@ local void TKA_Destroy(struct Togl *togl) {
 /*****************************************************************************/
 
 
-local GLint TKA_Reset(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_Reset(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   TKA_Create(togl);
   Togl_PostRedisplay(togl);
@@ -698,7 +694,7 @@ local GLint TKA_Reset(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_Eye(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_Eye(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   struct Antenna *antenna = Togl_GetClientData(togl);  /**  Antenna data  **/
   GLint           result;                              /**  Result        **/
@@ -724,7 +720,7 @@ local GLint TKA_Eye(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_AddElement(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_AddElement(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   struct Antenna *antenna = Togl_GetClientData(togl);  /**  Set up antenna  **/
   GLint           result;                              /**  Result          **/
@@ -749,7 +745,7 @@ local GLint TKA_AddElement(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_StdAnt(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_StdAnt(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   char   file_name[256];  /**  Name of file  **/
   GLint  result;          /**  Result        **/
@@ -786,7 +782,7 @@ local GLint TKA_StdAnt(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_LoadAnt(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_LoadAnt(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   GLint  result;          /**  Result        **/
 
@@ -811,7 +807,7 @@ local GLint TKA_LoadAnt(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_DeleteAnt(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_DeleteAnt(struct Togl *togl, GLint argc, char CONST84 **argv) {
 
   GLint  result;          /**  Result        **/
 
@@ -835,7 +831,7 @@ local GLint TKA_DeleteAnt(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_ControlAnt(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_ControlAnt(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   GLint   result;  /**  Result    **/
   int     func;    /**  Function  **/
@@ -867,7 +863,7 @@ local GLint TKA_ControlAnt(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_ControlTube(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_ControlTube(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   GLint   result;  /**  Result    **/
   int     func;    /**  Function  **/
@@ -933,7 +929,7 @@ local GLint TKA_ControlTube(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_ChangeCurrentAnt(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_ChangeCurrentAnt(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   GLint  result;  /**  Result  **/
 
@@ -956,7 +952,7 @@ local GLint TKA_ChangeCurrentAnt(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_ChangeCurrentTube(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_ChangeCurrentTube(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   GLint  result;  /**  Result  **/
 
@@ -980,7 +976,7 @@ local GLint TKA_ChangeCurrentTube(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_ChangeDrawMode(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_ChangeDrawMode(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   GLint  result;  /**  Result  **/
 
@@ -1074,7 +1070,7 @@ local GLint TKA_ChangeDrawMode(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_ChangeWireDrawMode(struct Togl *togl,GLint argc,char **argv) {
+local GLint TKA_ChangeWireDrawMode(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   GLint  result;  /**  Result  **/
 
@@ -1108,7 +1104,7 @@ local GLint TKA_ChangeWireDrawMode(struct Togl *togl,GLint argc,char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_ChangeAntMode(struct Togl *togl,GLint argc,char **argv) {
+local GLint TKA_ChangeAntMode(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   GLint  result;  /**  Result  **/
 
@@ -1138,9 +1134,7 @@ local GLint TKA_ChangeAntMode(struct Togl *togl,GLint argc,char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_DrawRFPowerDensity(struct Togl  *togl, 
-                                         GLint   argc, 
-                                          char **argv) {
+local GLint TKA_DrawRFPowerDensity(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   GLint   result;  /**  Result   **/
 
@@ -1166,7 +1160,7 @@ local GLint TKA_DrawRFPowerDensity(struct Togl  *togl,
 /*****************************************************************************/
 
 
-local GLint TKA_SaveFile(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_SaveFile(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   char    file_name[255];  /**  File name  **/
   GLint   result;          /**  Result     **/
@@ -1199,7 +1193,7 @@ local GLint TKA_SaveFile(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_SaveRGBImage(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_SaveRGBImage(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   char    file_name[255];  /**  File name  **/
   GLint   result;          /**  Result     **/
@@ -1232,7 +1226,7 @@ local GLint TKA_SaveRGBImage(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_MoveCenter(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_MoveCenter(struct Togl *togl, GLint argc, CONST84 char **argv) {
   struct Antenna *antenna = Togl_GetClientData(togl);  /**  Antenna data   **/
   GLint   result;          /**  Result     **/
   double dist, elevation, azimuth;
@@ -1265,7 +1259,7 @@ local GLint TKA_MoveCenter(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_GetVariable(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_GetVariable(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   GLint   result;          /**  Result     **/
 
@@ -1367,7 +1361,7 @@ local void TKA_SetLight(struct Light *l, GLfloat eyemin, GLfloat eyemax) {
 /*****************************************************************************/
 
 
-local GLint TKA_Global(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_Global(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   struct Antenna *antenna = Togl_GetClientData(togl);  /**  Antenna Data  **/
   GLint           result;                              /**  Result        **/
@@ -1391,7 +1385,7 @@ local GLint TKA_Global(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_Material(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_Material(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   struct Antenna *antenna = Togl_GetClientData(togl);  /**  Antenna data   **/
   GLint           result;                              /**  Result         **/
@@ -1431,7 +1425,7 @@ local GLint TKA_Material(struct Togl *togl, GLint argc, char **argv) {
 /*****************************************************************************/
 
 
-local GLint TKA_Light(struct Togl *togl, GLint argc, char **argv) {
+local GLint TKA_Light(struct Togl *togl, GLint argc, CONST84 char **argv) {
 
   struct Antenna *antenna = Togl_GetClientData(togl);  /**  Antenna data   **/ 
   GLint           result;                              /**  Result         **/
