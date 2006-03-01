@@ -89,7 +89,7 @@ install: TkAnt
 
 uninstall:
 	-rm -f $(bindir)/TkAnt
-	-rm -f $(bindir)/antenna.tcl
+	-rm -f $(bindir)/antennavis
 
 clean:
 	-rm -f $(clean-files)
