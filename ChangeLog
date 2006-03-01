@@ -1,6 +1,6 @@
 antennavis (0.3)
 
-  * First public release.
+  * First public release by new maintainer.
   * Uses autoconf which automatically searches for tcl and tk headers and
     libraries.
   * Copyright notices added to all of the C files, header files and
@@ -23,3 +23,5 @@ antennavis (0.3)
   * The buttons have been moved to the display frame, which leaves a bit
     more room on the screen.
   * Several compilation fixes.
+  * General font changed to helvetica.
+  * The main program is now called antennavis instead of antenna.tcl.
