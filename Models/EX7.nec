@@ -1,6 +1,6 @@
 CM SAMPLE PROBLEM FOR NEC
 CE STICK MODEL OF AIRCRAFT - FREE SPACE
-GW  1,    1,    0.,       0.,        0.,        6.,        0.,        0.,       1.,
+GW  1    1    0.       0.        0.        6.        0.        0.       1.
 GW  2    6    6.       0.        0.        44.       0.        0.       1.
 GW  3    4    44.      0.        0.        68.       0.        0.       1.
 GW  4    6    44.      0.        0.        24.       29.9      0.       1.
