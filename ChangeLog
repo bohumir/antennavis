@@ -1,3 +1,8 @@
+antennavis (0.3.1)
+
+  * Some of the models have been modified, so they work okay with antennavis.
+    Especially the PT card and fields separated by a comma would cause trouble.
+
 antennavis (0.3)
 
   * First public release by new maintainer.
