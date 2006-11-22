@@ -2,6 +2,8 @@ antennavis (0.3.1)
 
   * Some of the models have been modified, so they work okay with antennavis.
     Especially the PT card and fields separated by a comma would cause trouble.
+  * The configure script has been improved, it now exits when the tcl and tk
+    development headers are not found.
 
 antennavis (0.3)
 
