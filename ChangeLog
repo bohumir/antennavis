@@ -1,3 +1,8 @@
+antennavis (0.3.2)
+
+  * Some of the models have been modified, so they work okay with antennavis.
+    Especially the PT card and fields separated by a comma would cause trouble.
+
 antennavis (0.3.1)
 
   * New public release by new maintainer (Nanakos Chrysostomos).
@@ -8,13 +13,6 @@ antennavis (0.3.1)
     build libraries.
   * Fixed segfault crash when loading a file  with no GW lines.
     Thanks to Kamal Mostafa for the patch.
-
-antennavis (0.3.1)
-
-  * Some of the models have been modified, so they work okay with antennavis.
-    Especially the PT card and fields separated by a comma would cause trouble.
-  * The configure script has been improved, it now exits when the tcl and tk
-    development headers are not found.
 
 antennavis (0.3)
 
