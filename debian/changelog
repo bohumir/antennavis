@@ -1,3 +1,82 @@
+antennavis (0.3.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * New maintainer (Closes: Bug#553390).
+  * Took over upstream, updated watch file, and set Homepage field.
+  * Revised short package description.
+  * Added in copyright file the real path to GPL-2.
+  * Modified debian/rules to dynamically generate the Makefile.
+  * Added a few more checks in configure file relevant to required
+    libraries.
+  * Fixed segfault crash when loading a file with no GW lines.
+    Thanks to Kamal Mostafa <kamal@whence.com> for the patch.
+    (Closes: Bug#569644).
+  * Update S-V to 3.8.4
+       - debian/copyright file is now UTF-8 encoded.
+  * Added ${misc:Depends} to control file.
+  * Added debian/source/format file.
+  * Bumped debhelper versioned Build-Depends to 7, and updated
+    debian/compat.
+
+ -- Nanakos Chrysostomos <nanakos@wired-net.gr>  Wed, 23 Jun 2010 23:24:00 +0200
+
+antennavis (0.3-6) unstable; urgency=low
+
+  * Retiring - set the package maintainer to Debian QA Group.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Fri, 30 Oct 2009 20:39:37 +0000
+
+antennavis (0.3-5) unstable; urgency=low
+
+  * Update Build-Depends for GL/GLU transition. Thanks James Westby.
+    Closes: #451829.
+  * Bump debhelper and compat file to version 5.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Mon, 19 Nov 2007 20:16:45 +0100
+
+antennavis (0.3-4) unstable; urgency=low
+
+  * Fix watch file. Closes: #450235.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Mon, 12 Nov 2007 20:24:08 +0100
+
+antennavis (0.3-3) unstable; urgency=low
+
+  * Use AC_PROG_INSTALL in configure.ac and "INSTALL := @INSTALL@" and
+    friends in makefile.in. Also include install-sh.
+  * Fix a lintian warning: debian-rules-ignores-make-clean-error.
+  * Move the menu entry to Applications/Amateur Radio.
+  * Cleaning now removes config.log and config.status.
+  * Handle "nostrip" build option. Closes: #436459.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Sat, 01 Sep 2007 20:22:04 +0200
+
+antennavis (0.3-2) unstable; urgency=low
+
+  * Change build dependencies to use libglu1-mesa-dev instead of obsolete
+    xlibmesa-glu-dev. Thanks to Andreas Jochens for reporting.
+    Closes: #374598.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Fri, 23 Jun 2006 21:31:11 +0200
+
+antennavis (0.3-1) unstable; urgency=low
+
+  * New upstream.
+  * Please note: the script to be executed has been renamed from
+    antenna.tcl to antennavis.
+  * Provide a debian menu entry.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Wed,  1 Mar 2006 21:30:33 +0100
+
+antennavis (0.2-6) unstable; urgency=low
+
+   * Update standards version.
+   * Fix another compilation error.
+   * Call the nec binary correctly from TkAnt, now that nec takes
+     input.nec and output.nec as arguments. Closes: #342812.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Mon,  27 Feb 2006 21:30:33 +0100
+
 antennavis (0.2-5) unstable; urgency=low
 
   * Somehow the old makefile got distributed. Fixed that.

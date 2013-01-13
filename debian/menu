@@ -1,0 +1,3 @@
+?package(antennavis):needs="X11" section="Applications/Amateur Radio" \
+  title="Antennavis" command="/usr/bin/antennavis" \
+  longtitle="Antennavis: antenna visualisation toolkit"

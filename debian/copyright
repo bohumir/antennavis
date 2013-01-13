@@ -1,5 +1,6 @@
 This package was debianized by Joop Stakenborg <pa3aba@debian.org> on
-Thu,  3 Mar 2005 19:43:19 +0100.
+Thu,  3 Mar 2005 19:43:19 +0100 and is now maintained by Nanakos
+Chrysostomos <nanakos@wired-net.gr>
 
 It was downloaded from http://n5xu.ae.utexas.edu/antennavis
 
@@ -10,8 +11,10 @@ Upstream Authors: Adrian Agogino <agogino@ece.utexas.edu> and
 
 License:
 
-Published under the GNU GPL License. There should be a copy
-of the GPL on youe system under /usr/share/common-licenses.
+antennavis is Copyright © 2005 Ken Harker, ans placed under the 
+the GNU General Public License, version 2 or later.
+There should be a copy of the GPL on your system under
+/usr/share/common-licenses/GPL-2.
 
 The antennavis source includes a copy of togl.c and togl.h, which are both
 part of the Togl library, a OpenGL TK widget. Here is the full Togl license:
