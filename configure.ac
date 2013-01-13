@@ -9,6 +9,7 @@ AC_PROG_CC
 LDFLAGS="$LDFLAGS -L/usr/X11R6/lib"
 # Checks for libraries.
 AC_CHECK_LIB([GLU], [gluCylinder])
+AC_CHECK_LIB([GL], [glXChooseVisual])
 AC_CHECK_LIB([Xmu], [XmuLookupStandardColormap])
 
 # Checks for header files.
@@ -36,7 +37,7 @@ if test -n "$tkdir" -a "$tkdir" != "no" ; then
 fi
 
 dnl A function to search for header files
-AC_DEFUN(AC_SEARCH_HEADERS,
+AC_DEFUN([AC_SEARCH_HEADERS],
 [
 	for search_header in $1
 	do
