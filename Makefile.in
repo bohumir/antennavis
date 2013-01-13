@@ -28,7 +28,7 @@
 ##
 CFLAGS := @CFLAGS@
 CPPFLAGS := @CPPFLAGS@
-LIBS := @LIBS@
+LIBS := @LIBS@ -lX11 -lm
 LDFLAGS := @LDFLAGS@
 
 prefix = @prefix@
