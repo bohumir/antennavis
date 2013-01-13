@@ -30,8 +30,8 @@
 #define TKANTENNA_H
 
 #include "MyTypes.h"
-#include "tcl.h"
-#include "tk.h"
+#include <tcl.h>
+#include <tk.h>
 
 
 /*****************************************************************************/
