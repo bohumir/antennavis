@@ -1,3 +1,13 @@
+antennavis (0.3.1-2) unstable; urgency=low
+
+  * Fix FTBFS due to indirect linking in natty toolchain.
+    Thanks to Bhavani Shankar <bhavi@ubuntu.com>
+    (Closes: Bug#553950).
+  * Added a library check in configure file relevant to a requires
+    library, libGL. Now it compiles cleanly. Thanks Sven Hoexter.
+
+ -- Nanakos Chrysostomos <nanakos@wired-net.gr>  Fri, 4 Mar 2011 17:32:53 +0200
+
 antennavis (0.3.1-1) unstable; urgency=low
 
   * New upstream release.

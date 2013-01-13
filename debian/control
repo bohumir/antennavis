@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Nanakos Chrysostomos <nanakos@wired-net.gr>
 Homepage: http://www.include.gr/antennavis.html
 Build-Depends: debhelper (>= 7.0.0), tcl8.4-dev, tk8.4-dev, libgl1-mesa-dev | libgl-dev, libglu1-mesa-dev | libglu-dev, libxmu-dev
-Standards-Version: 3.9.0
+Standards-Version: 3.9.1
 
 Package: antennavis
 Architecture: any
