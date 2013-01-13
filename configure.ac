@@ -1,4 +1,4 @@
-AC_PREREQ(2.60)
+AC_PREREQ(2.57)
 AC_INIT(antennavis, 0.3, pg4i@amsat.org)
 AC_PREFIX_DEFAULT(/usr/local)
 AC_CONFIG_SRCDIR([AntennaWidget.c])
@@ -60,15 +60,6 @@ if test "x$with_tcltk" != "xno" ; then
 
 		AC_SEARCH_HEADERS("$BASE_TCL_DIR/tk.h" /usr/include/tk8.4/tk.h /usr/include/tk8.3/tk.h /usr/include/tk8.0/tk.h /usr/include/tk.h
 		    ,BASE_TK_DIR)]))
-fi
-
-if test "x$ac_cv_header__usr_include_tcl8_4_tk_h" != "xyes"; then
-	echo
-	echo "You *must* have the tcl and tk development libraries and headers"
-	echo "installed to build antennavis..."
-	echo
-	echo "configure aborted."
-	exit
 fi
 
 # Checks for typedefs, structures, and compiler characteristics.
