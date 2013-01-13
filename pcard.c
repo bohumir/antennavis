@@ -564,6 +564,14 @@ void ReadCardFile(CONST84 char *file_name, Ant *antData) {
     }  /**  For each card  **/
     fclose(fin);
 
+    /** Check whether we read any tubes at all before proceeding. **/
+
+    if( antData->first_tube == NULL) {
+	    fprintf(stderr,"No geometry tubes (GW lines) specified in file %s\n",file_name);
+	    return;
+    }
+
+
     /**  Traverse list of elements to find dynamic range  **/
     /**  We will need to scale things to accomodate all   **/
     /**  sizes of antennas.                               **/
