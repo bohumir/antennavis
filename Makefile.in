@@ -55,9 +55,9 @@ subdir =
 files =
 
 clean-files = TkAnt *.o
-distclean-files = config.log config.status input.nec output.nec *~
+distclean-files = config.log config.status input.nec output.nec *~ Makefile
 
-srcfiles = configure configure.in makefile makefile.in
+srcfiles = configure configure.in Makefile Makefile.in
 
 default: TkAnt
 
@@ -78,7 +78,7 @@ TkAnt: TkAntenna.o AntennaWidget.o ParseArgs.o ant.o pcard.o \
 ##
 ## make sure the build system is consistant.
 ##
-makefile: configure makefile.in
+Makefile: configure Makefile.in
 	$(CONFIGURE)
 	
 configure:
