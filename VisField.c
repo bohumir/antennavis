@@ -130,9 +130,9 @@ void AntNormCrossProd(double v1[3], double v2[3], double out[3]) {
 void PlotPoint(GLfloat azimuth, GLfloat elevation, GLfloat dist) {
 
    glPushMatrix();
-   glRotatef(azimuth, 0.0, 1.0, 0.0);
-   glRotatef(elevation, 1.0, 0.0, 0.0);
-   glTranslatef(0.0, 0.0, dist * POINT_DIST_SCALE);
+   glRotatef(elevation, 0.0, 1.0, 0.0);
+   glRotatef(azimuth, 0.0, 0.0, -1.0);
+   glTranslatef(0.0, dist * POINT_DIST_SCALE, 0.0);
    TKA_Cube(dist * POINT_SIZE_SCALE);
    glPopMatrix();
 
