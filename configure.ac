@@ -54,8 +54,8 @@ AC_DEFUN([AC_SEARCH_HEADERS],
 ])
 
 if test "x$with_tcltk" != "xno" ; then
-	AC_SEARCH_LIBS([Tcl_Init], [tcl85 tcl8.5 tcl84 tcl8.4 tcl83 tcl8.3 tcl8.0],
-	AC_SEARCH_LIBS([Tk_Init], [tk85 tk8.5 tk84 tk8.4 tk83 tk8.3 tk8.0],
+	AC_SEARCH_LIBS([Tcl_Init], [tcl86 tcl8.6 tcl85 tcl8.5 tcl84 tcl8.4 tcl83 tcl8.3 tcl8.0],
+	AC_SEARCH_LIBS([Tk_Init], [tk86 tk8.6 tk85 tk8.5 tk84 tk8.4 tk83 tk8.3 tk8.0],
 	    [AC_SEARCH_HEADERS(/usr/include/tcl8.4/tcl.h /usr/include/tcl8.3/tcl.h /usr/include/tcl8.0/tcl.h /usr/include/tcl.h
 		    ,BASE_TCL_DIR)
 
