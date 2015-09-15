@@ -86,6 +86,7 @@ configure:
 	autoconf
 
 install: TkAnt
+	mkdir -p $(bindir)
 	install -s TkAnt $(bindir)
 	install antenna.tcl $(bindir)/antennavis
 	mkdir -p $(mandir)/man1
