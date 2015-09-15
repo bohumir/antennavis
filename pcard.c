@@ -754,6 +754,8 @@ void ParseFieldData(FILE *fin,
 
   if (compField == true) {
     count = 0;
+    rewind(fin);
+    end_of_file = false;
     do {  /**  Ignore everything but RP  **/
       ptr = fgets(line, 256, fin);
       if(strstr(line, "RADIATION PATTERNS") != NULL)
