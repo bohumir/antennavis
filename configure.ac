@@ -1,5 +1,5 @@
-AC_PREREQ(2.60)
-AC_INIT(antennavis, 0.3, pg4i@amsat.org)
+AC_PREREQ([2.71])
+AC_INIT([antennavis],[0.3],[pg4i@amsat.org])
 AC_PREFIX_DEFAULT(/usr/local)
 AC_CONFIG_SRCDIR([AntennaWidget.c])
 
@@ -13,7 +13,9 @@ AC_CHECK_LIB([GL], [glXChooseVisual])
 AC_CHECK_LIB([Xmu], [XmuLookupStandardColormap])
 
 # Checks for header files.
-AC_HEADER_STDC
+AC_CHECK_INCLUDES_DEFAULT
+AC_PROG_EGREP
+
 AC_HEADER_SYS_WAIT
 AC_CHECK_HEADERS([stddef.h stdlib.h string.h unistd.h])
 
