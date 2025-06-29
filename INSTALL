@@ -7,3 +7,26 @@ make install.
 Antennavis also needs the OpenGL libraries and headers for compilation.
 Om my Debian system the package needed is called libglu1-xorg-dev or
 xlibmesa-glu-dev and xlibmesa-gl-dev.
+
+
+2025/06/29
+Antennavis was tested to work under WSL with Ubuntu 24.04 (Noble) on Windows 11.
+Ubuntu was updated first:
+ sudo apt update
+ sudo apt upgrade
+The following libraries were needed:
+ sudo apt install libx11-dev
+ sudo apt install make
+ sudo apt install autoconf
+ sudo apt install tcl-dev
+ sudo apt install tk-dev
+ sudo apt install mesa-common-dev
+ sudo apt install libglu1-mesa-dev
+ sudo apt install libxmu-dev
+ sudo apt install libgl1-mesa-dev
+ sudo apt install freeglut3-dev
+The process to complile and install "antennavis" is:
+ autoconf
+ ./configure --prefix=$PWD/../install
+ make clean
+ make install
